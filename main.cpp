@@ -91,43 +91,43 @@ Main Object: Car Interior
         
     Sub Object: Instrument Cluster
         Name 4 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-            4)
+            1) gear display
+            2) speedometer dial
+            3) RPM dial
+            4) temperature display
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) display speed
+            2) display RPM
+            3) display exterior temperature.
     
     Sub Object: Environment Controls
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) air conditioning button
+            2) fan speed control knob
+            3) interior heating control knob
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) turn on air conditioning
+            2) adjust fan speed
+            3) adjust interior heat
 
     Sub Object: Infotainment System
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) radio dial
+            2) car speaker volume knob
+            3) infotainment display
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) change radio station
+            2) adjust car speaker volume
+            3) display audio source
 
     Sub Object: Seat 
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) adjustable seat slide toggle
+            2) seat belt receiver
+            3) seat belt
         Name 2 actions that the [Sub Object] can do:
-            1)
-            2)
+            1) change seat position
+            2) release seat belt
 */
 
 /*
