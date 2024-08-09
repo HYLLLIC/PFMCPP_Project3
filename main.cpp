@@ -83,11 +83,11 @@ Main Object: Car Interior
         Name 4 nouns you'll find on the [Sub Object]
             1) paddle shifters
             2) 'cruise control' controls
-            3) 
-            4) 
+            3) entertainment navigation buttons
+            4) car horn
         Name 2 actions that the [Sub Object] can do:
             1) adjust cruise control settings.
-            2)
+            2) honk the car horn.
         
     Sub Object: Instrument Cluster
         Name 4 nouns you'll find on the [Sub Object]
