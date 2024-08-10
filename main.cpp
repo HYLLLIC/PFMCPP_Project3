@@ -436,11 +436,11 @@ example:
 
 Thing 5) Oscillator
 5 properties:
-    1) Pitch
-    2) Type of wave form
-    3) Pulsewidth range (abstract value)
-    4) Volume in dB
-    5) Octave (numerical value)
+    1) Pitch (float)
+    2) Type of wave form (std::string)
+    3) Pulsewidth (abstract value) (float)
+    4) Volume in dB (double)
+    5) Octave (numerical value) (int)
 3 things it can do:
     1) Change pitch
     2) Change pulsewidth
@@ -448,11 +448,11 @@ Thing 5) Oscillator
 
 Thing 6) Envelope Generator
 5 properties:
-    1) Attack speed
-    2) Decay speed
-    3) Sustain level
-    4) Release speed
-    5) Delay length
+    1) Attack speed (double)
+    2) Decay speed (double)
+    3) Sustain level (double)
+    4) Release speed (double)
+    5) Delay length (double)
 3 things it can do:
     1) Play short envelope
     2) Play long envelope
@@ -460,11 +460,11 @@ Thing 6) Envelope Generator
 
 Thing 7) "Band Pass" Filter
 5 properties:
-    1) High pass cutoff
-    2) Low pass cutoff
-    3) High pass resonance
-    4) Low pass resonance
-    5) Filter slope
+    1) High pass cutoff (float)
+    2) Low pass cutoff (float)
+    3) High pass resonance (float)
+    4) Low pass resonance (float)
+    5) Filter slope (std::string)
 3 things it can do:
     1) Change cutoff
     2) Change resonance
@@ -472,11 +472,11 @@ Thing 7) "Band Pass" Filter
 
 Thing 8) Sample and Hold
 5 properties:
-    1) Clock frequency
-    2) Input voltage range
-    3) Output amplitude
-    4) Output slew rate
-    5) Clock randomness (arbitrary value)
+    1) Clock frequency (float)
+    2) Input voltage (double)
+    3) Output amplitude (float)
+    4) Output slew rate (double)
+    5) Clock randomness (arbitrary value) (float)
 3 things it can do:
     1) Change clock frequency
     2) Change clock randomness
@@ -484,11 +484,11 @@ Thing 8) Sample and Hold
 
 Thing 9) Delay
 5 properties:
-    1) Delay rate
-    2) Feedback amount
-    3) Wet volume
-    4) Dry volume
-    5) Delay fidelity
+    1) Delay rate (std::string)
+    2) Feedback amount (float)
+    3) Wet volume (double)
+    4) Dry volume (double)
+    5) Delay fidelity (int)
 3 things it can do:
     1) Change delay rate
     2) Change feedback amount
