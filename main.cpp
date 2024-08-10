@@ -337,17 +337,17 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 
-Thing 10) Korg MS-20
+Thing 10) Imaginary Korg
 5 properties:
-    1) Oscillator 1
-    2) Oscillator 2
-    3) Band Pass Filter
+    1) Oscillator
+    2) Envelope Generator
+    3) "Band Pass" Filter
     4) Sample and Hold
-    5) VCA
+    5) Delay
 3 things it can do:
-    1) Change volume
-    2) Change pitch
-    3) Play note
+    1) Play note
+    2) Play noise
+    3) Randomly generate voltage
  */
 
  /*
@@ -434,65 +434,65 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5)
+Thing 5) Oscillator
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Pitch
+    2) Type of wave form
+    3) Pulsewidth range (abstract value)
+    4) Volume in dB
+    5) Octave (numerical value)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Change pitch
+    2) Change pulsewidth
+    3) Change octave
 
-Thing 6)
+Thing 6) Envelope Generator
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Attack speed
+    2) Decay speed
+    3) Sustain level
+    4) Release speed
+    5) Delay length
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Play short envelope
+    2) Play long envelope
+    3) Remain open
 
-Thing 7)
+Thing 7) "Band Pass" Filter
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) High pass cutoff
+    2) Low pass cutoff
+    3) High pass resonance
+    4) Low pass resonance
+    5) Filter slope
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Change cutoff
+    2) Change resonance
+    3) Change filter slope
 
-Thing 8)
+Thing 8) Sample and Hold
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Clock frequency
+    2) Input voltage range
+    3) Output amplitude
+    4) Output slew rate
+    5) Clock randomness (arbitrary value)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Change clock frequency
+    2) Change clock randomness
+    3) Change output amplitude
 
-Thing 9)
+Thing 9) Delay
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Delay rate
+    2) Feedback amount
+    3) Wet volume
+    4) Dry volume
+    5) Delay fidelity
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Change delay rate
+    2) Change feedback amount
+    3) Change wet volume
  */
 
 /*
