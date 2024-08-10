@@ -542,9 +542,9 @@ Thing 10) Imaginary Korg
     4) Sample and Hold
     5) Delay
 3 things it can do:
-    1) Play note
+    1) Play pretty note
     2) Play noise
-    3) Randomly generate voltage
+    3) Randomly generate notes
 */
 
 /*
