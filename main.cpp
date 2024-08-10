@@ -198,11 +198,11 @@ Part 1b - Step 2: Assignment
 
 Thing 1) Corporate Office
 5 properties:
-    1) number of employees
-    2) number of elevators
-    3) range of open hours
-    4) HVAC temperature range
-    5) number of floors
+    1) number of employees (int)
+    2) number of elevators (int)
+    3) average salary (float)
+    4) HVAC temperature setting (float)
+    5) address (std::string)
 3 things it can do:
     1) call client
     2) release payroll
@@ -210,11 +210,11 @@ Thing 1) Corporate Office
 
 Thing 2) Digital Keyboard
 5 properties:
-    1) Number of keys
-    2) Amount of voltage
-    3) Brightness of screen
-    4) Amount of memory
-    5) Sample rate
+    1) Number of keys (int)
+    2) Amount of voltage (float)
+    3) Brightness of screen (double)
+    4) Amount of memory (double)
+    5) Sample rate (int)
 3 things it can do:
     1) Change octave
     2) Produce sound
@@ -222,11 +222,11 @@ Thing 2) Digital Keyboard
 
 Thing 3) Phone Book
 5 properties:
-    1) Number of pages
-    2) Weight of book
-    3) Number of colors
-    4) Age of book
-    5) Strength of glue
+    1) Number of pages (int)
+    2) Weight of book (float)
+    3) Telephone company (std::string)
+    4) Age of book (float)
+    5) Strength of glue (float)
 3 things it can do:
     1) Display contact information
     2) Open to random page
@@ -234,11 +234,11 @@ Thing 3) Phone Book
 
 Thing 4) Electric Heater
 5 properties:
-    1) Number of watts
-    2) Number of settings
-    3) Temperature range
-    4) Range of pivot
-    5) Number of LEDs
+    1) Wattage (float)
+    2) Number of settings (int)
+    3) Temperature setting (int)
+    4) Pivot mode (char)
+    5) Power saving mode (bool)
 3 things it can do:
     1) Produce heat
     2) Trigger countdown timer
