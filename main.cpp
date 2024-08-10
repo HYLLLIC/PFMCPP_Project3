@@ -196,53 +196,53 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)
+Thing 1) Corporate Office
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of employees
+    2) number of elevators
+    3) range of open hours
+    4) HVAC temperature range
+    5) number of floors
 3 things it can do:
-    1)
-    2)
-    3)
+    1) call client
+    2) release payroll
+    3) call security
 
-Thing 2)
+Thing 2) Digital Keyboard
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Number of keys
+    2) Amount of voltage
+    3) Brightness of screen
+    4) Amount of memory
+    5) Sample rate
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Change octave
+    2) Produce sound
+    3) Display wave form
 
-Thing 3)
+Thing 3) Phone Book
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Number of pages
+    2) Weight of book
+    3) Number of colors
+    4) Age of book
+    5) Strength of glue
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Display contact information
+    2) Open to random page
+    3) Disintigrate
 
-Thing 4)
+Thing 4) Electric Heater
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Number of watts
+    2) Number of settings
+    3) Temperature range
+    4) Range of pivot
+    5) Number of LEDs
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Produce heat
+    2) Trigger countdown timer
+    3) Display current temperature
 */
 
 /*
