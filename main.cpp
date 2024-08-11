@@ -1005,10 +1005,135 @@ Part 1e - Step 19: Request a review
 paste your code below
 */
 
+struct CorporateOffice
+{
+    // number of employees
+    // number of elevators
+    // average salary
+    // HVAC temperature setting
+    // address
 
+    // call client
+    // release payroll
+    // call security
+};
 
+struct DigitalKeyboard
+{
+    // Number of keys
+    // Amount of voltage
+    // Brightness of screen
+    // Amount of memory
+    // Sample rate
 
+    // Change octave
+    // Produce sound
+    // Display wave form
+};
 
+struct PhoneBook
+{
+    // Number of pages
+    // Weight of book
+    // Telephone company
+    // Age of book
+    // Strength of glue
+
+    // Display contact information
+    // Open to random page
+    // Disintigrate
+};
+
+struct ElectricHeater
+{
+    // Wattage
+    // Number of settings
+    // Temperature setting
+    // Pivot mode
+    // Power saving mode
+
+    // Produce heat
+    // Trigger countdown timer
+    // Display current temperature
+};
+
+struct Oscillator
+{
+    // Pitch
+    // Type of wave form
+    // Pulsewidth (abstract value)
+    // Volume in dB
+    // Octave (numerical value)
+
+    // Change pitch
+    // Change pulsewidth
+    // Change octave
+};
+
+struct EnvelopeGenerator
+{
+    // Attack speed
+    // Decay speed
+    // Sustain level
+    // Release speed
+    // Delay length
+
+    // Play short envelope
+    // Play long envelope
+    // Remain open
+};
+
+struct BandPassFilter
+{
+    // High pass cutoff
+    // Low pass cutoff
+    // High pass resonance
+    // Low pass resonance
+    // Filter slope
+
+    // Change cutoff
+    // Change resonance
+    // Change filter slope
+};
+
+struct SampleAndHold
+{
+    //Clock frequency (float)
+    // Input voltage (double)
+    // Output amplitude (float)
+    // Output slew rate
+    // Clock randomness (arbitrary value)
+
+    // Change clock frequency
+    // Change clock randomness
+    // Change output amplitude
+};
+
+struct Delay
+{
+    //Clock frequency (float)
+    // Input voltage (double)
+    // Output amplitude (float)
+    // Output slew rate (double)
+    // Clock randomness (arbitrary value) (float)
+
+    // Change clock frequency
+    // Change clock randomness
+    // Change output amplitude
+};
+
+struct ImaginaryKorg
+{
+    // Oscillator
+    // Envelope Generator
+    // "Band Pass" Filter
+    // Sample and Hold
+    // Delay
+
+    // Play pretty note
+    // Play noise
+    // Randomly generate notes
+};
 
 
 
