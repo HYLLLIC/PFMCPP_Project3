@@ -83,51 +83,51 @@ Main Object: Car Interior
         Name 4 nouns you'll find on the [Sub Object]
             1) paddle shifters
             2) 'cruise control' controls
-            3) 
-            4) 
+            3) entertainment navigation buttons
+            4) car horn
         Name 2 actions that the [Sub Object] can do:
             1) adjust cruise control settings.
-            2)
+            2) honk the car horn.
         
     Sub Object: Instrument Cluster
         Name 4 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-            4)
+            1) gear display
+            2) speedometer dial
+            3) RPM dial
+            4) temperature display
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) display speed
+            2) display RPM
+            3) display exterior temperature.
     
     Sub Object: Environment Controls
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) air conditioning button
+            2) fan speed control knob
+            3) interior heating control knob
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) turn on air conditioning
+            2) adjust fan speed
+            3) adjust interior heat
 
     Sub Object: Infotainment System
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) radio dial
+            2) car speaker volume knob
+            3) infotainment display
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) change radio station
+            2) adjust car speaker volume
+            3) display audio source
 
     Sub Object: Seat 
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) adjustable seat slide toggle
+            2) seat belt receiver
+            3) seat belt
         Name 2 actions that the [Sub Object] can do:
-            1)
-            2)
+            1) change seat position
+            2) release seat belt
 */
 
 /*
@@ -195,54 +195,6 @@ Part 1b - Step 2: Assignment
         primitives.
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
-
-Thing 1)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 2)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 3)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 4)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 */
 
 /*
@@ -336,18 +288,6 @@ Part 1c - Step 4: Assignment
 Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
-
-Thing 10)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
  */
 
  /*
@@ -433,66 +373,6 @@ example:
     If #10's first property was 'Engine', then `Thing 5)` will be `Engine`. 
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
-
-Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
  */
 
 /*
@@ -545,12 +425,127 @@ MOVE THEM to the space below this block comment and put them in numerical order
     simply CUT and PASTE them in the space provided below:
 */
 
+/*
+Thing 1) Corporate Office
+5 properties:
+    1) number of employees (int)
+    2) number of elevators (int)
+    3) average salary (float)
+    4) HVAC temperature setting (float)
+    5) address (std::string)
+3 things it can do:
+    1) target employee to call client
+    2) release payroll
+    3) call security
 
+Thing 2) Digital Keyboard
+5 properties:
+    1) Number of keys (int)
+    2) Amount of voltage (float)
+    3) Brightness of screen in nits (int)
+    4) Amount of memory (double)
+    5) Sample rate (int)
+3 things it can do:
+    1) Change octave
+    2) Produce sound
+    3) Display wave form
 
+Thing 3) Phone Book
+5 properties:
+    1) Number of pages (int)
+    2) Weight of book (float)
+    3) Telephone company (std::string)
+    4) Age of book (float)
+    5) Strength of glue (float)
+3 things it can do:
+    1) Display contact information
+    2) Open to random page
+    3) Disintigrate
 
+Thing 4) Electric Heater
+5 properties:
+    1) Wattage (float)
+    2) Number of settings (int)
+    3) Temperature setting (int)
+    4) Pivot mode (char)
+    5) Power saving mode (bool)
+3 things it can do:
+    1) Produce heat
+    2) Trigger countdown timer
+    3) Display current temperature
 
+Thing 5) Oscillator
+5 properties:
+    1) Pitch (float)
+    2) Type of wave form (std::string)
+    3) Pulsewidth (abstract value) (float)
+    4) Volume in dB (double)
+    5) Octave (numerical value) (int)
+3 things it can do:
+    1) Change pitch
+    2) Change pulsewidth
+    3) Change octave
 
+Thing 6) Envelope Generator
+5 properties:
+    1) Attack speed (double)
+    2) Decay speed (double)
+    3) Sustain level (double)
+    4) Release speed (double)
+    5) Delay length (double)
+3 things it can do:
+    1) Play short envelope
+    2) Play long envelope
+    3) Remain open
 
+Thing 7) "Band Pass" Filter
+5 properties:
+    1) High pass cutoff (float)
+    2) Low pass cutoff (float)
+    3) High pass resonance (float)
+    4) Low pass resonance (float)
+    5) Filter slope (std::string)
+3 things it can do:
+    1) Change cutoff
+    2) Change resonance
+    3) Change filter slope
+
+Thing 8) Sample and Hold
+5 properties:
+    1) Clock frequency (float)
+    2) Input voltage (double)
+    3) Output amplitude (float)
+    4) Output slew rate (double)
+    5) Clock randomness (arbitrary value) (float)
+3 things it can do:
+    1) Change clock frequency
+    2) Change clock randomness
+    3) Change output amplitude
+
+Thing 9) Delay
+5 properties:
+    1) Delay rate (std::string)
+    2) Feedback amount (float)
+    3) Wet volume (double)
+    4) Dry volume (double)
+    5) Delay fidelity (int)
+3 things it can do:
+    1) Change delay rate
+    2) Change feedback amount
+    3) Change wet volume
+
+Thing 10) Imaginary Korg
+5 properties:
+    1) Oscillator
+    2) Envelope Generator
+    3) "Band Pass" Filter
+    4) Sample and Hold
+    5) Delay
+3 things it can do:
+    1) Play pretty note
+    2) Play noise
+    3) Randomly generate notes
+*/
 
 /*
 =================
@@ -1010,13 +1005,253 @@ Part 1e - Step 19: Request a review
 paste your code below
 */
 
+struct CorporateOffice
+{
+    // number of employees
+    int numberOfEmployees = 100;
+    // number of elevators
+    int numberOfElevators = 2;
+    // average salary
+    float averageSalary = 70000.f;
+    // HVAC temperature setting
+    float temperatureSetting = 70.f;
+    // address
+    std::string address = "4321 Main St";
 
+    struct Employee
+    {
+        std::string name = "John Doe";
+        std::string jobTitle = "Staff";
+        std::string department = "Administration";
+        float salary = 50000.f;
+        int timeAtCompany = 1;
 
+        // 3 things they can do:
+        void clockIn(double timeIn);
+        double clockOut(double timeOut); //returns the time they worked that day
+        void makeCopies(int numCopies);
+    };
 
+    // 3 things it can do:
+    // target employee to call client
+    void callClient(std::string clientName, Employee employee);
+    // release payroll
+    void releasePayroll(Employee employeeOne, Employee employeeTwo);
+    // call security
+    void callSecurity(Employee securityGuard);
+};
 
+struct DigitalKeyboard
+{
+    // Number of keys
+    int NumbersOfKeys = 25;
+    // Amount of voltage
+    float voltage = 9.f;
+    // Brightness of screen in nits
+    int screentBrightness = 1000;
+    // Amount of memory
+    double memoryAmount = 80.0;
+    // Sample rate
+    int sampleRate = 44100;
 
+    // 3 things it can do:
+    // Change octave
+    int chnageOctave(int newOctave); //returns the new octave number
+    // Produce sound
+    void produceSound();
+    // Display wave form
+    void displayWaveForm();
+};
 
+struct PhoneBook
+{
+    // Number of pages
+    int numberOfPages = 1000;
+    // Weight of book
+    float bookWeight = 2.2f;
+    // Telephone company
+    std::string telephoneCompany = "Yellowpages";
+    // Age of book
+    float bookAge = 3.1f;
+    // Strength of glue
+    float glueStrength = 1.7f;
 
+    // 3 things it can do:
+    // Display contact information
+    std::string contactInformationDiplay(std::string contactName); //returns the contact information
+    // Open to random page
+    void openToRandomPage();
+    // Disintigrate
+    void disintigrate();
+};
+
+struct ElectricHeater
+{
+    // Wattage
+    float wattage = 1500.f;
+    // Number of settings
+    int numberOfSettings = 3;
+    // Temperature setting
+    int temperatureSetting = 72;
+    // Pivot mode
+    char pivotMode = 'A';
+    // Power saving mode
+    bool powerSavingMode = true;
+
+    struct HeatingElement
+    {
+        int resistance = 10;
+        int voltage = 120;
+        float elementLength = 24.0f;
+        std::string supportType = "Embedded";
+        std::string layoutType = "Open Coil";
+
+        // 3 things it can do:
+        void slowCoolDown(int coolDownTime = 10);
+        void slowHeatUp(int heatUpTime = 10);
+        void changeTemperature(int newTemperature);
+    };
+    
+    // 3 things it can do:
+    // Produce heat
+    void produceHeat();
+    // Trigger countdown timer
+    void triggerCountdownTimer(float tippingMovement);
+    // Display current temperature
+    int displayCurrentTemperature(); //returns the current temperature
+};
+
+struct Oscillator
+{
+    // Pitch
+    float pitch = 440.f;
+    // Type of wave form
+    std::string waveForm = "Sawtooth";
+    // Pulsewidth (abstract value)
+    float pulseWidth = 0.5f;
+    // Volume in dB
+    double volume = 50.0;
+    // Octave (numerical value)
+    int octave = 16;
+
+    // 3 things it can do:
+    // Change pitch
+    float changePitch(float newPitch); //returns the new pitch
+    // Change pulsewidth
+    float changePulseWidth(float newPulseWidth); //returns the new pulsewidth
+    // Change octave
+    int changeOctave(int newOctave); //returns the new octave
+};
+
+struct EnvelopeGenerator
+{
+    // Attack speed
+    double attackSpeed = 0.01;
+    // Decay speed
+    double decaySpeed = 0.05;
+    // Sustain level
+    double sustainLevel = 0.5;
+    // Release speed
+    double releaseSpeed = 0.1;
+    // Delay length
+    double delayLength = 0.0;
+
+    // 3 things it can do:
+    // Play short envelope
+    void playShortEnvelope(double newReleaseSpeed); //returns the new release speed
+    // Play long envelope
+    void playLongEnvelope(double newAttackSpeed, double newReleaseSpeed); //returns the new attack and release speed
+    // Remain open
+    void remainOpen();
+};
+
+struct BandPassFilter
+{
+    // High pass cutoff
+    float highPassCutoff = 20.f;
+    // Low pass cutoff
+    float lowPassCutoff = 1000.f;
+    // High pass resonance
+    float highPassResonance = 0.f;
+    // Low pass resonance
+    float lowPassResonance = 0.f;
+    // Filter slope
+    std::string filterSlope = "12 dB/Oct";
+
+    // 3 things it can do:
+    // Change cutoff
+    float changeBPCutoff(float newBPCutoff); //returns the new cutoff
+    // Change resonance
+    float changeBPResonance(float newBPResonance);
+    // Change filter slope
+    std::string changeFilterSlope(std::string newFilterSlope); //returns the new filter slope
+};
+
+struct SampleAndHold
+{
+    //Clock frequency
+    float clockFrequency = 5.f;
+    // Input voltage
+    double inputVoltage = 2.0;
+    // Output amplitude
+    float output = 5.f;
+    // Output slew rate
+    double outputSlewRate = 0.0;
+    // Clock randomness (arbitrary value)
+    float clockRandomness = 0.5f;
+
+    // 3 things it can do:
+    // Change clock frequency
+    float changeClockFrequency(float newClockFrequency); //returns the new clock frequency
+    // Change clock randomness
+    float changeClockRandomness(float newClockRandomness); //returns the new clock randomness
+    // Change output amplitude
+    float changeOutput(float newOutput); //returns the new output
+};
+
+struct Delay
+{
+    // Delay rate
+    std::string delayRate = "1/4";
+    //Feedback amount (float)
+    float feedbackAmount = 0.5f;
+    // Wet volume (double)
+    double wetVolume = 0.5;
+    // Dry volume (double)
+    double dryVolume = 0.5;
+    // Delay fidelity (int)
+    int delayFidelity = 10;
+
+    // 3 things it can do:
+    // Change delay rate
+    std::string changeDelayRate(std::string newDelayRate); //returns the new delay rate
+    // Change feedback amount
+    float changeFeedbackAmount(float newFeedbackAmount); //returns the new feedback amount
+    // Change wet volume
+    double changeWetVolume(double newWetVolume); //returns the new wet volume
+};
+
+struct ImaginaryKorg
+{
+    // Oscillator
+    Oscillator oscillator;
+    // Envelope Generator
+    EnvelopeGenerator envelopeGenerator;
+    // "Band Pass" Filter
+    BandPassFilter bandPassFilter;
+    // Sample and Hold
+    SampleAndHold sampleAndHold;
+    // Delay
+    Delay delay;
+
+    // 3 things it can do:
+    // Play pretty note
+    void playPrettyNote(Oscillator sawtoothNote, EnvelopeGenerator newEnvelope, Delay prettyDelay);
+    // Play noise
+    void playNoise(Oscillator noise);
+    // Randomly generate notes
+    void randomlyGenerateNotes(SampleAndHold randomPattern);
+};
 
 int main()
 {
