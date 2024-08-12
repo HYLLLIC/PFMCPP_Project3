@@ -1246,9 +1246,9 @@ struct ImaginaryKorg
 
     // 3 things it can do:
     // Play pretty note
-    void playPrettyNote(int newNoteNumber, EnvelopeGenerator newEnvelope);
+    void playPrettyNote(Oscillator sawtoothNote, EnvelopeGenerator newEnvelope, Delay prettyDelay);
     // Play noise
-    void playNoise();
+    void playNoise(Oscillator noise);
     // Randomly generate notes
     void randomlyGenerateNotes(SampleAndHold randomPattern);
 };
