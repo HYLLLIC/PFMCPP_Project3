@@ -442,7 +442,7 @@ Thing 2) Digital Keyboard
 5 properties:
     1) Number of keys (int)
     2) Amount of voltage (float)
-    3) Brightness of screen (double)
+    3) Brightness of screen in nits (int)
     4) Amount of memory (double)
     5) Sample rate (int)
 3 things it can do:
@@ -1008,10 +1008,15 @@ paste your code below
 struct CorporateOffice
 {
     // number of employees
+    int numberOfEmployees = 100;
     // number of elevators
+    int numberOfElevators = 2;
     // average salary
+    float averageSalary = 70000.f;
     // HVAC temperature setting
+    float temperatureSetting = 70.f;
     // address
+    std::string address = "4321 Main St";
 
     // call client
     // release payroll
@@ -1021,10 +1026,15 @@ struct CorporateOffice
 struct DigitalKeyboard
 {
     // Number of keys
+    int NumbersOfKeys = 88;
     // Amount of voltage
-    // Brightness of screen
+    float voltage = 9.f;
+    // Brightness of screen in nits
+    int screentBrightness = 1000;
     // Amount of memory
+    double memoryAmount = 80.0;
     // Sample rate
+    int sampleRate = 44100;
 
     // Change octave
     // Produce sound
@@ -1034,10 +1044,15 @@ struct DigitalKeyboard
 struct PhoneBook
 {
     // Number of pages
+    int numberOfPages = 1000;
     // Weight of book
+    float bookWeight = 2.2f;
     // Telephone company
+    std::string telephoneCompany = "Yellowpages";
     // Age of book
+    float bookAge = 3.1f;
     // Strength of glue
+    float glueStrength = 1.7f;
 
     // Display contact information
     // Open to random page
@@ -1047,10 +1062,15 @@ struct PhoneBook
 struct ElectricHeater
 {
     // Wattage
+    float wattage = 1500.f;
     // Number of settings
+    int numberOfSettings = 3;
     // Temperature setting
+    int temperatureSetting = 72;
     // Pivot mode
+    char pivotMode = 'A';
     // Power saving mode
+    bool powerSavingMode = true;
 
     // Produce heat
     // Trigger countdown timer
@@ -1060,10 +1080,15 @@ struct ElectricHeater
 struct Oscillator
 {
     // Pitch
+    float pitch = 440.f;
     // Type of wave form
+    std::string waveForm = "Sawtooth";
     // Pulsewidth (abstract value)
+    float pulseWidth = 0.5f;
     // Volume in dB
+    double volume = 50.0;
     // Octave (numerical value)
+    int octave = 16;
 
     // Change pitch
     // Change pulsewidth
@@ -1073,10 +1098,15 @@ struct Oscillator
 struct EnvelopeGenerator
 {
     // Attack speed
+    double attackSpeed = 0.01;
     // Decay speed
+    double decaySpeed = 0.05;
     // Sustain level
+    double sustainLevel = 0.5;
     // Release speed
+    double releaseSpeed = 0.1;
     // Delay length
+    double delayLength = 0.0;
 
     // Play short envelope
     // Play long envelope
@@ -1086,10 +1116,15 @@ struct EnvelopeGenerator
 struct BandPassFilter
 {
     // High pass cutoff
+    float highPassCutoff = 20.f;
     // Low pass cutoff
+    float lowPassCutoff = 1000.f;
     // High pass resonance
+    float highPassResonance = 0.f;
     // Low pass resonance
+    float lowPassResonance = 0.f;
     // Filter slope
+    std::string filterSlope = "12 dB/Oct";
 
     // Change cutoff
     // Change resonance
@@ -1098,11 +1133,16 @@ struct BandPassFilter
 
 struct SampleAndHold
 {
-    //Clock frequency (float)
-    // Input voltage (double)
-    // Output amplitude (float)
+    //Clock frequency
+    float clockFrequency = 5.f;
+    // Input voltage
+    double inputVoltage = 2.0;
+    // Output amplitude
+    float output = 5.f;
     // Output slew rate
+    double outputSlewRate = 0.0;
     // Clock randomness (arbitrary value)
+    float clockRandomness = 0.5f;
 
     // Change clock frequency
     // Change clock randomness
@@ -1111,24 +1151,34 @@ struct SampleAndHold
 
 struct Delay
 {
-    //Clock frequency (float)
-    // Input voltage (double)
-    // Output amplitude (float)
-    // Output slew rate (double)
-    // Clock randomness (arbitrary value) (float)
+    // Delay rate
+    std::string delayRate = "1/4";
+    //Feedback amount (float)
+    float feedbackAmount = 0.5f;
+    // Wet volume (double)
+    double wetVolume = 0.5;
+    // Dry volume (double)
+    double dryVolume = 0.5;
+    // Delay fidelity (int)
+    int delayFidelity = 10;
 
-    // Change clock frequency
-    // Change clock randomness
-    // Change output amplitude
+    //Change delay rate
+    // Change feedback amount
+    // Change wet volume
 };
 
 struct ImaginaryKorg
 {
     // Oscillator
+    Oscillator oscillator;
     // Envelope Generator
+    EnvelopeGenerator envelopeGenerator;
     // "Band Pass" Filter
+    BandPassFilter bandPassFilter;
     // Sample and Hold
+    SampleAndHold sampleAndHold;
     // Delay
+    Delay delay;
 
     // Play pretty note
     // Play noise
