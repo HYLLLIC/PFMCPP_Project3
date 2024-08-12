@@ -1018,15 +1018,19 @@ struct CorporateOffice
     // address
     std::string address = "4321 Main St";
 
+    // 3 things it can do:
     // call client
+    void callClient(std::string clientName);
     // release payroll
+    void releasePayroll();
     // call security
+    void callSecurity();
 };
 
 struct DigitalKeyboard
 {
     // Number of keys
-    int NumbersOfKeys = 88;
+    int NumbersOfKeys = 25;
     // Amount of voltage
     float voltage = 9.f;
     // Brightness of screen in nits
@@ -1036,9 +1040,13 @@ struct DigitalKeyboard
     // Sample rate
     int sampleRate = 44100;
 
+    // 3 things it can do:
     // Change octave
+    int chnageOctave(int newOctave); //returns the new octave number
     // Produce sound
+    void produceSound();
     // Display wave form
+    void displayWaveForm();
 };
 
 struct PhoneBook
@@ -1054,9 +1062,13 @@ struct PhoneBook
     // Strength of glue
     float glueStrength = 1.7f;
 
+    // 3 things it can do:
     // Display contact information
+    std::string contactInformationDiplay(std::string contactName); //returns the contact information
     // Open to random page
+    void openToRandomPage();
     // Disintigrate
+    void disintigrate();
 };
 
 struct ElectricHeater
@@ -1072,9 +1084,13 @@ struct ElectricHeater
     // Power saving mode
     bool powerSavingMode = true;
 
+    // 3 things it can do:
     // Produce heat
+    void produceHeat();
     // Trigger countdown timer
+    void triggerCountdownTimer(float tippingMovement);
     // Display current temperature
+    int displayCurrentTemperature(); //returns the current temperature
 };
 
 struct Oscillator
@@ -1090,9 +1106,13 @@ struct Oscillator
     // Octave (numerical value)
     int octave = 16;
 
+    // 3 things it can do:
     // Change pitch
+    float changePitch(float newPitch); //returns the new pitch
     // Change pulsewidth
+    float changePulseWidth(float newPulseWidth); //returns the new pulsewidth
     // Change octave
+    int changeOctave(int newOctave); //returns the new octave
 };
 
 struct EnvelopeGenerator
@@ -1108,9 +1128,13 @@ struct EnvelopeGenerator
     // Delay length
     double delayLength = 0.0;
 
+    // 3 things it can do:
     // Play short envelope
+    void playShortEnvelope(double newReleaseSpeed); //returns the new release speed
     // Play long envelope
+    void playLongEnvelope(double newAttackSpeed, double newReleaseSpeed); //returns the new attack and release speed
     // Remain open
+    void remainOpen();
 };
 
 struct BandPassFilter
@@ -1126,9 +1150,13 @@ struct BandPassFilter
     // Filter slope
     std::string filterSlope = "12 dB/Oct";
 
+    // 3 things it can do:
     // Change cutoff
+    float changeBPCutoff(float newBPCutoff); //returns the new cutoff
     // Change resonance
+    float changeBPResonance(float newBPResonance);
     // Change filter slope
+    std::string changeFilterSlope(std::string newFilterSlope); //returns the new filter slope
 };
 
 struct SampleAndHold
@@ -1144,9 +1172,13 @@ struct SampleAndHold
     // Clock randomness (arbitrary value)
     float clockRandomness = 0.5f;
 
+    // 3 things it can do:
     // Change clock frequency
+    float changeClockFrequency(float newClockFrequency); //returns the new clock frequency
     // Change clock randomness
+    float changeClockRandomness(float newClockRandomness); //returns the new clock randomness
     // Change output amplitude
+    float changeOutput(float newOutput); //returns the new output
 };
 
 struct Delay
@@ -1162,9 +1194,13 @@ struct Delay
     // Delay fidelity (int)
     int delayFidelity = 10;
 
-    //Change delay rate
+    // 3 things it can do:
+    // Change delay rate
+    std::string changeDelayRate(std::string newDelayRate); //returns the new delay rate
     // Change feedback amount
+    float changeFeedbackAmount(float newFeedbackAmount); //returns the new feedback amount
     // Change wet volume
+    double changeWetVolume(double newWetVolume); //returns the new wet volume
 };
 
 struct ImaginaryKorg
@@ -1180,13 +1216,14 @@ struct ImaginaryKorg
     // Delay
     Delay delay;
 
+    // 3 things it can do:
     // Play pretty note
+    void playPrettyNote(int newNoteNumber);
     // Play noise
+    void playNoise();
     // Randomly generate notes
+    void randomlyGenerateNotes();
 };
-
-
-
 
 int main()
 {
