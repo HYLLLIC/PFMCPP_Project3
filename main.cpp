@@ -434,7 +434,7 @@ Thing 1) Corporate Office
     4) HVAC temperature setting (float)
     5) address (std::string)
 3 things it can do:
-    1) call client
+    1) target employee to call client
     2) release payroll
     3) call security
 
@@ -1033,12 +1033,12 @@ struct CorporateOffice
     };
 
     // 3 things it can do:
-    // call client
-    void callClient(std::string clientName);
+    // target employee to call client
+    void callClient(std::string clientName, Employee employee);
     // release payroll
-    void releasePayroll();
+    void releasePayroll(Employee employeeOne, Employee employeeTwo);
     // call security
-    void callSecurity();
+    void callSecurity(Employee securityGuard);
 };
 
 struct DigitalKeyboard
@@ -1246,11 +1246,11 @@ struct ImaginaryKorg
 
     // 3 things it can do:
     // Play pretty note
-    void playPrettyNote(int newNoteNumber);
+    void playPrettyNote(int newNoteNumber, EnvelopeGenerator newEnvelope);
     // Play noise
     void playNoise();
     // Randomly generate notes
-    void randomlyGenerateNotes();
+    void randomlyGenerateNotes(SampleAndHold randomPattern);
 };
 
 int main()
