@@ -1018,6 +1018,20 @@ struct CorporateOffice
     // address
     std::string address = "4321 Main St";
 
+    struct Employee
+    {
+        std::string name = "John Doe";
+        std::string jobTitle = "Staff";
+        std::string department = "Administration";
+        float salary = 50000.f;
+        int timeAtCompany = 1;
+
+        // 3 things they can do:
+        void clockIn(double timeIn);
+        double clockOut(double timeOut); //returns the time they worked that day
+        void makeCopies(int numCopies);
+    };
+
     // 3 things it can do:
     // call client
     void callClient(std::string clientName);
@@ -1084,6 +1098,20 @@ struct ElectricHeater
     // Power saving mode
     bool powerSavingMode = true;
 
+    struct HeatingElement
+    {
+        int resistance = 10;
+        int voltage = 120;
+        float elementLength = 24.0f;
+        std::string supportType = "Embedded";
+        std::string layoutType = "Open Coil";
+
+        // 3 things it can do:
+        void slowCoolDown(int coolDownTime = 10);
+        void slowHeatUp(int heatUpTime = 10);
+        void changeTemperature(int newTemperature);
+    };
+    
     // 3 things it can do:
     // Produce heat
     void produceHeat();
