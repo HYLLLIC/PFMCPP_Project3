@@ -134,15 +134,10 @@ struct CarWash
 
 struct CorporateOffice
 {
-    // number of employees
     int numberOfEmployees = 100;
-    // number of elevators
     int numberOfElevators = 2;
-    // average salary
     float averageSalary = 70000.f;
-    // HVAC temperature setting
     float temperatureSetting = 70.f;
-    // address
     std::string address = "4321 Main St";
 
     struct Employee
@@ -153,76 +148,48 @@ struct CorporateOffice
         float salary = 50000.f;
         int timeAtCompany = 1;
 
-        // 3 things they can do:
         void clockIn(double timeIn);
         double clockOut(double timeOut); //returns the time they worked that day
         void makeCopies(int numCopies);
     };
 
-    // 3 things it can do:
-    // target employee to call client
     void callClient(std::string clientName, Employee employee);
-    // release payroll
     void releasePayroll(Employee employeeOne, Employee employeeTwo);
-    // call security
     void callSecurity(Employee securityGuard);
 };
 
 struct DigitalKeyboard
 {
-    // Number of keys
     int NumbersOfKeys = 25;
-    // Amount of voltage
     float voltage = 9.f;
-    // Brightness of screen in nits
     int screentBrightness = 1000;
-    // Amount of memory
     double memoryAmount = 80.0;
-    // Sample rate
     int sampleRate = 44100;
 
-    // 3 things it can do:
-    // Change octave
     int chnageOctave(int newOctave); //returns the new octave number
-    // Produce sound
     void produceSound();
-    // Display wave form
     void displayWaveForm();
 };
 
 struct PhoneBook
 {
-    // Number of pages
     int numberOfPages = 1000;
-    // Weight of book
     float bookWeight = 2.2f;
-    // Telephone company
     std::string telephoneCompany = "Yellowpages";
-    // Age of book
     float bookAge = 3.1f;
-    // Strength of glue
     float glueStrength = 1.7f;
 
-    // 3 things it can do:
-    // Display contact information
     std::string contactInformationDiplay(std::string contactName); //returns the contact information
-    // Open to random page
     void openToRandomPage();
-    // Disintigrate
     void disintigrate();
 };
 
 struct ElectricHeater
 {
-    // Wattage
     float wattage = 1500.f;
-    // Number of settings
     int numberOfSettings = 3;
-    // Temperature setting
     int temperatureSetting = 72;
-    // Pivot mode
     char pivotMode = 'A';
-    // Power saving mode
     bool powerSavingMode = true;
 
     struct HeatingElement
@@ -233,150 +200,91 @@ struct ElectricHeater
         std::string supportType = "Embedded";
         std::string layoutType = "Open Coil";
 
-        // 3 things it can do:
         void slowCoolDown(int coolDownTime = 10);
         void slowHeatUp(int heatUpTime = 10);
         void changeTemperature(int newTemperature);
     };
     
-    // 3 things it can do:
-    // Produce heat
     void produceHeat();
-    // Trigger countdown timer
     void triggerCountdownTimer(float tippingMovement);
-    // Display current temperature
     int displayCurrentTemperature(); //returns the current temperature
 };
 
 struct Oscillator
 {
-    // Pitch
     float pitch = 440.f;
-    // Type of wave form
     std::string waveForm = "Sawtooth";
-    // Pulsewidth (abstract value)
     float pulseWidth = 0.5f;
-    // Volume in dB
     double volume = 50.0;
-    // Octave (numerical value)
     int octave = 16;
 
-    // 3 things it can do:
-    // Change pitch
     float changePitch(float newPitch); //returns the new pitch
-    // Change pulsewidth
     float changePulseWidth(float newPulseWidth); //returns the new pulsewidth
-    // Change octave
     int changeOctave(int newOctave); //returns the new octave
 };
 
 struct EnvelopeGenerator
 {
-    // Attack speed
     double attackSpeed = 0.01;
-    // Decay speed
     double decaySpeed = 0.05;
-    // Sustain level
     double sustainLevel = 0.5;
-    // Release speed
     double releaseSpeed = 0.1;
-    // Delay length
     double delayLength = 0.0;
 
-    // 3 things it can do:
-    // Play short envelope
     void playShortEnvelope(double newReleaseSpeed); //returns the new release speed
-    // Play long envelope
     void playLongEnvelope(double newAttackSpeed, double newReleaseSpeed); //returns the new attack and release speed
-    // Remain open
     void remainOpen();
 };
 
 struct BandPassFilter
 {
-    // High pass cutoff
     float highPassCutoff = 20.f;
-    // Low pass cutoff
     float lowPassCutoff = 1000.f;
-    // High pass resonance
     float highPassResonance = 0.f;
-    // Low pass resonance
     float lowPassResonance = 0.f;
-    // Filter slope
     std::string filterSlope = "12 dB/Oct";
 
-    // 3 things it can do:
-    // Change cutoff
     float changeBPCutoff(float newBPCutoff); //returns the new cutoff
-    // Change resonance
     float changeBPResonance(float newBPResonance);
-    // Change filter slope
     std::string changeFilterSlope(std::string newFilterSlope); //returns the new filter slope
 };
 
 struct SampleAndHold
 {
-    //Clock frequency
     float clockFrequency = 5.f;
-    // Input voltage
     double inputVoltage = 2.0;
-    // Output amplitude
     float output = 5.f;
-    // Output slew rate
     double outputSlewRate = 0.0;
-    // Clock randomness (arbitrary value)
     float clockRandomness = 0.5f;
 
-    // 3 things it can do:
-    // Change clock frequency
     float changeClockFrequency(float newClockFrequency); //returns the new clock frequency
-    // Change clock randomness
     float changeClockRandomness(float newClockRandomness); //returns the new clock randomness
-    // Change output amplitude
     float changeOutput(float newOutput); //returns the new output
 };
 
 struct Delay
 {
-    // Delay rate
     std::string delayRate = "1/4";
-    //Feedback amount (float)
     float feedbackAmount = 0.5f;
-    // Wet volume (double)
     double wetVolume = 0.5;
-    // Dry volume (double)
     double dryVolume = 0.5;
-    // Delay fidelity (int)
     int delayFidelity = 10;
 
-    // 3 things it can do:
-    // Change delay rate
     std::string changeDelayRate(std::string newDelayRate); //returns the new delay rate
-    // Change feedback amount
     float changeFeedbackAmount(float newFeedbackAmount); //returns the new feedback amount
-    // Change wet volume
     double changeWetVolume(double newWetVolume); //returns the new wet volume
 };
 
 struct ImaginaryKorg
 {
-    // Oscillator
     Oscillator oscillator;
-    // Envelope Generator
     EnvelopeGenerator envelopeGenerator;
-    // "Band Pass" Filter
     BandPassFilter bandPassFilter;
-    // Sample and Hold
     SampleAndHold sampleAndHold;
-    // Delay
     Delay delay;
 
-    // 3 things it can do:
-    // Play pretty note
     void playPrettyNote(Oscillator sawtoothNote, EnvelopeGenerator newEnvelope, Delay prettyDelay);
-    // Play noise
     void playNoise(Oscillator noise);
-    // Randomly generate notes
     void randomlyGenerateNotes(SampleAndHold randomPattern);
 };
 
