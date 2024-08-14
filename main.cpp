@@ -194,7 +194,7 @@ struct CorporateOffice
         int timeAtCompany = 1;
 
         void clockIn(double timeIn);
-        double clockOut(double timeOut);
+        void clockOut(double timeOut);
         void makeCopies(int numCopies);
     };
 
@@ -202,6 +202,37 @@ struct CorporateOffice
     void releasePayroll(Employee employeeOne, Employee employeeTwo);
     void callSecurity(Employee securityGuard);
 };
+
+    void CorporateOffice::Employee::clockIn(double timeIn)
+    {
+        std::cout << "Welcome, it's " << timeIn << "AM" << std::endl;
+    }
+    
+    void CorporateOffice::Employee::clockOut(double timeOut)
+    {
+        std::cout << "Goodbye, it's " << timeOut << "PM" << std::endl;
+    }
+
+    void CorporateOffice::Employee::makeCopies(int numCopies)
+    {
+        std::cout << "Now printing " << numCopies << " copies" << std::endl;
+    }
+
+    void CorporateOffice::callClient(std::string clientName, Employee employee)
+    {
+        std::cout << "Now " << employee.name << " is calling " << clientName << std::endl;
+    }
+
+    void CorporateOffice::releasePayroll(Employee employeeOne, Employee employeeTwo)
+    {
+        employeeOne.salary += 4000.f;
+        employeeTwo.salary += 4000.f;
+    }
+
+    void CorporateOffice::callSecurity(Employee securityGuard)
+    {
+        securityGuard.name = "THE BOSS, NOW";
+    }
 
 struct DigitalKeyboard
 {
