@@ -117,7 +117,7 @@ struct Person
     unsigned int SATScore;
     int distanceTraveled;
 
-    struct limb
+    struct Limb
     {
         int step = 1;
 
@@ -125,18 +125,18 @@ struct Person
         int stepSize();    
     };
 
-    limb leftFoot;
-    limb rightFoot;
+    Limb leftFoot;
+    Limb rightFoot;
 
     void run(int howFast, bool startWithLeftFoot);
 };
 
-void Person::limb::stepForward()
+void Person::Limb::stepForward()
 {
     step += 1;
 }
 
-int Person::limb::stepSize()
+int Person::Limb::stepSize()
 {
     return step;
 }   
@@ -228,6 +228,26 @@ struct PhoneBook
     void openToRandomPage();
     void disintigrate();
 };
+
+    std::string PhoneBook::contactInformationDiplay(std::string contactName)
+    {
+        std::string phoneNumber = contactName + " 555-5555";
+        return phoneNumber;
+    }
+
+    void PhoneBook::openToRandomPage()
+    {
+        int min = 1;
+        int max = numberOfPages;
+    
+        int randomNumber = rand() % (max - min + 1) + min;
+        std::cout << "Opening page " << randomNumber << std::endl;
+    }
+
+    void PhoneBook::disintigrate()
+    {
+        std::cout << "Uahghghgllll I'm disintigrating" << std::endl;
+    }
 
 struct ElectricHeater
 {
