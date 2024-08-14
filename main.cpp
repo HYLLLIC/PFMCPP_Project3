@@ -242,10 +242,28 @@ struct DigitalKeyboard
     double memoryAmount = 80.0;
     int sampleRate = 44100;
 
-    int chnageOctave(int newOctave);
+    int changeOctave(int newOctave);
     void produceSound();
     void displayWaveForm();
 };
+    int DigitalKeyboard::changeOctave(int newOctave)
+    {
+        int octave = newOctave;
+        return octave;
+    }
+    
+    void DigitalKeyboard::produceSound()
+    {
+        std::cout << "Now playing sound" << std::endl;
+    }
+
+    void DigitalKeyboard::displayWaveForm()
+    {
+        std::cout << "Now displaying waveform" << std::endl;
+        std::cout << "   ~~~~    ~~~~    ~~~~    " << std::endl;
+        std::cout << " ~      ~        ~      ~  " << std::endl;
+        std::cout << "~        ~      ~        ~ " << std::endl;
+    }
 
 struct PhoneBook
 {
@@ -306,6 +324,40 @@ struct ElectricHeater
     int displayCurrentTemperature();
 };
 
+    void ElectricHeater::HeatingElement::slowCoolDown(int coolDownTime)
+    {
+        for (int i = 0; i < coolDownTime; ++i)
+            {
+                resistance --;
+            
+             }
+    }
+
+    void ElectricHeater::HeatingElement::slowHeatUp(int heatUpTime)
+    {
+        for (int i = 0; i < heatUpTime; ++i)
+            {
+                resistance ++;
+            }
+    }
+
+    void ElectricHeater::HeatingElement::changeTemperature(int newTemperature)
+    {
+        voltage = 0;
+        std::cout << "Haha gotcha, you wanted " << newTemperature << std::endl;
+    }
+
+    void ElectricHeater::produceHeat()
+    {
+        powerSavingMode = false;
+    }
+
+    void ElectricHeater::triggerCountdownTimer(float tippingMovement)
+    {
+        if (tippingMovement > 0.5f)
+            powerSavingMode = true;
+    }
+
 struct Oscillator
 {
     float pitch = 440.f;
@@ -319,6 +371,24 @@ struct Oscillator
     int changeOctave(int newOctave);
 };
 
+    float Oscillator::changePitch(float newPitch)
+    {
+        pitch = newPitch;
+        return pitch;
+    }
+
+    float Oscillator::changePulseWidth(float newPulseWidth)
+    {
+        pulseWidth = newPulseWidth;
+        return pulseWidth;
+    }
+
+    int Oscillator::changeOctave(int newOctave)
+    {
+        octave = octave + (newOctave * 16);
+        return octave;
+    }
+
 struct EnvelopeGenerator
 {
     double attackSpeed = 0.01;
@@ -331,6 +401,33 @@ struct EnvelopeGenerator
     void playLongEnvelope(double newAttackSpeed, double newReleaseSpeed);
     void remainOpen();
 };
+
+    void EnvelopeGenerator::playShortEnvelope(double newReleaseSpeed)
+    {
+        attackSpeed = 0.01;
+        decaySpeed = 0.01;
+        releaseSpeed = newReleaseSpeed;
+        sustainLevel = 0.0;
+        delayLength = 0.0;
+    }
+
+    void EnvelopeGenerator::playLongEnvelope(double newAttackSpeed, double newReleaseSpeed)
+    {
+        attackSpeed = newAttackSpeed;
+        decaySpeed = 0.1;
+        releaseSpeed = newReleaseSpeed;
+        sustainLevel = 0.5;
+        delayLength = 0.1;
+    }
+
+    void EnvelopeGenerator::remainOpen()
+    {
+        attackSpeed = 0.0;
+        decaySpeed = 0.0;
+        releaseSpeed = 1.0;
+        sustainLevel = 1.0;
+        delayLength = 0.0;
+    }
 
 struct BandPassFilter
 {
