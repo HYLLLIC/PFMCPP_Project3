@@ -442,6 +442,29 @@ struct BandPassFilter
     std::string changeFilterSlope(std::string newFilterSlope);
 };
 
+    float BandPassFilter::changeBPCutoff(float newBPCutoff)
+    {
+        highPassCutoff = newBPCutoff - 20;
+        lowPassCutoff = newBPCutoff + 20;
+        std::cout << newBPCutoff << "Hz" << std::endl;
+        return newBPCutoff;
+    }
+
+    float BandPassFilter::changeBPResonance(float newBPResonance)
+    {
+        highPassResonance = newBPResonance;
+        lowPassResonance = newBPResonance;
+        std::cout << newBPResonance << "Q" << std::endl;
+        return newBPResonance;
+    }
+
+    std::string BandPassFilter::changeFilterSlope(std::string newFilterSlope)
+    {
+        filterSlope = newFilterSlope;
+        std::cout << newFilterSlope << std::endl;
+        return newFilterSlope;
+    }
+
 struct SampleAndHold
 {
     float clockFrequency = 5.f;
@@ -454,6 +477,27 @@ struct SampleAndHold
     float changeClockRandomness(float newClockRandomness);
     float changeOutput(float newOutput);
 };
+
+    float SampleAndHold::changeClockFrequency(float newClockFrequency)
+    {
+        clockRandomness = 0.0;
+        clockFrequency = newClockFrequency;
+        return newClockFrequency;
+    }
+
+    float SampleAndHold::changeClockRandomness(float newClockRandomness)
+    {
+        outputSlewRate = 0.0;
+        clockRandomness = newClockRandomness;
+        return newClockRandomness;
+    }
+
+    float SampleAndHold::changeOutput(float newOutput)
+    {
+        outputSlewRate = 0.0;
+        output = newOutput;
+        return newOutput;
+    }
 
 struct Delay
 {
@@ -468,6 +512,32 @@ struct Delay
     double changeWetVolume(double newWetVolume);
 };
 
+    std::string Delay::changeDelayRate(std::string newDelayRate)
+    {
+        if (newDelayRate.empty())
+            {
+                std::cout << "Error: Delay Rate Cannot be Empty" << std::endl;
+                return delayRate;
+            }
+
+            delayRate = newDelayRate;
+
+            return delayRate;
+    }
+
+    float Delay::changeFeedbackAmount(float newFeedbackAmount)
+    {
+        feedbackAmount = newFeedbackAmount;
+        return newFeedbackAmount;
+    }
+
+    double Delay::changeWetVolume(double newWetVolume)
+    {
+        wetVolume = newWetVolume;
+        dryVolume = 1.0 - newWetVolume;
+        return newWetVolume;
+    }
+
 struct ImaginaryKorg
 {
     Oscillator oscillator;
@@ -480,6 +550,25 @@ struct ImaginaryKorg
     void playNoise(Oscillator noise);
     void randomlyGenerateNotes(SampleAndHold randomPattern);
 };
+
+    void ImaginaryKorg::playPrettyNote(Oscillator sawtoothNote, EnvelopeGenerator newEnvelope, Delay prettyDelay)
+    {
+        oscillator.changePitch(sawtoothNote.changePitch(770.f));
+        bandPassFilter.changeBPCutoff(prettyDelay.changeFeedbackAmount(0.5f));
+        envelopeGenerator.playLongEnvelope(newEnvelope.attackSpeed, newEnvelope.releaseSpeed);
+    }
+
+    void ImaginaryKorg::playNoise(Oscillator noise)
+    {
+        oscillator.changePitch(noise.changePitch(1000.f));
+        sampleAndHold.changeClockRandomness(0.5f);
+        sampleAndHold.changeClockFrequency(100.0f);
+    }
+
+    void ImaginaryKorg::randomlyGenerateNotes(SampleAndHold randomPattern)
+    {
+        oscillator.changePitch(randomPattern.changeOutput(0.5f));
+    }
 
 int main()
 {
