@@ -108,9 +108,54 @@ struct CarWash
     You'll need to insert the Person struct from the video in the space below.
  */
 
+struct Person
+{
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTraveled;
 
+    struct limb
+    {
+        int step = 1;
 
+        void stepForward();
+        int stepSize();    
+    };
 
+    limb leftFoot;
+    limb rightFoot;
+
+    void run(int howFast, bool startWithLeftFoot);
+};
+
+void Person::limb::stepForward()
+{
+    step += 1;
+}
+
+int Person::limb::stepSize()
+{
+    return step;
+}   
+
+void Person::run(int howFast, bool startWithLeftFoot)
+{
+    if (startWithLeftFoot == true)
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();
+    } 
+    else
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    
+    distanceTraveled = (leftFoot.stepSize() + rightFoot.stepSize()) * howFast;
+}
 
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
@@ -149,7 +194,7 @@ struct CorporateOffice
         int timeAtCompany = 1;
 
         void clockIn(double timeIn);
-        double clockOut(double timeOut); //returns the time they worked that day
+        double clockOut(double timeOut);
         void makeCopies(int numCopies);
     };
 
@@ -166,7 +211,7 @@ struct DigitalKeyboard
     double memoryAmount = 80.0;
     int sampleRate = 44100;
 
-    int chnageOctave(int newOctave); //returns the new octave number
+    int chnageOctave(int newOctave);
     void produceSound();
     void displayWaveForm();
 };
@@ -179,7 +224,7 @@ struct PhoneBook
     float bookAge = 3.1f;
     float glueStrength = 1.7f;
 
-    std::string contactInformationDiplay(std::string contactName); //returns the contact information
+    std::string contactInformationDiplay(std::string contactName);
     void openToRandomPage();
     void disintigrate();
 };
@@ -207,7 +252,7 @@ struct ElectricHeater
     
     void produceHeat();
     void triggerCountdownTimer(float tippingMovement);
-    int displayCurrentTemperature(); //returns the current temperature
+    int displayCurrentTemperature();
 };
 
 struct Oscillator
@@ -218,9 +263,9 @@ struct Oscillator
     double volume = 50.0;
     int octave = 16;
 
-    float changePitch(float newPitch); //returns the new pitch
-    float changePulseWidth(float newPulseWidth); //returns the new pulsewidth
-    int changeOctave(int newOctave); //returns the new octave
+    float changePitch(float newPitch);
+    float changePulseWidth(float newPulseWidth);
+    int changeOctave(int newOctave);
 };
 
 struct EnvelopeGenerator
@@ -231,8 +276,8 @@ struct EnvelopeGenerator
     double releaseSpeed = 0.1;
     double delayLength = 0.0;
 
-    void playShortEnvelope(double newReleaseSpeed); //returns the new release speed
-    void playLongEnvelope(double newAttackSpeed, double newReleaseSpeed); //returns the new attack and release speed
+    void playShortEnvelope(double newReleaseSpeed);
+    void playLongEnvelope(double newAttackSpeed, double newReleaseSpeed);
     void remainOpen();
 };
 
@@ -244,9 +289,9 @@ struct BandPassFilter
     float lowPassResonance = 0.f;
     std::string filterSlope = "12 dB/Oct";
 
-    float changeBPCutoff(float newBPCutoff); //returns the new cutoff
+    float changeBPCutoff(float newBPCutoff);
     float changeBPResonance(float newBPResonance);
-    std::string changeFilterSlope(std::string newFilterSlope); //returns the new filter slope
+    std::string changeFilterSlope(std::string newFilterSlope);
 };
 
 struct SampleAndHold
@@ -257,9 +302,9 @@ struct SampleAndHold
     double outputSlewRate = 0.0;
     float clockRandomness = 0.5f;
 
-    float changeClockFrequency(float newClockFrequency); //returns the new clock frequency
-    float changeClockRandomness(float newClockRandomness); //returns the new clock randomness
-    float changeOutput(float newOutput); //returns the new output
+    float changeClockFrequency(float newClockFrequency);
+    float changeClockRandomness(float newClockRandomness);
+    float changeOutput(float newOutput);
 };
 
 struct Delay
@@ -270,9 +315,9 @@ struct Delay
     double dryVolume = 0.5;
     int delayFidelity = 10;
 
-    std::string changeDelayRate(std::string newDelayRate); //returns the new delay rate
-    float changeFeedbackAmount(float newFeedbackAmount); //returns the new feedback amount
-    double changeWetVolume(double newWetVolume); //returns the new wet volume
+    std::string changeDelayRate(std::string newDelayRate);
+    float changeFeedbackAmount(float newFeedbackAmount);
+    double changeWetVolume(double newWetVolume);
 };
 
 struct ImaginaryKorg
