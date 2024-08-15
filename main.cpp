@@ -203,36 +203,36 @@ struct CorporateOffice
     void callSecurity(Employee securityGuard);
 };
 
-    void CorporateOffice::Employee::clockIn(double timeIn)
-    {
-        std::cout << "Welcome, it's " << timeIn << "AM" << std::endl;
-    }
-    
-    void CorporateOffice::Employee::clockOut(double timeOut)
-    {
-        std::cout << "Goodbye, it's " << timeOut << "PM" << std::endl;
-    }
+void CorporateOffice::Employee::clockIn(double timeIn)
+{
+    std::cout << "Welcome, it's " << timeIn << "AM" << std::endl;
+}
 
-    void CorporateOffice::Employee::makeCopies(int numCopies)
-    {
-        std::cout << "Now printing " << numCopies << " copies" << std::endl;
-    }
+void CorporateOffice::Employee::clockOut(double timeOut)
+{
+    std::cout << "Goodbye, it's " << timeOut << "PM" << std::endl;
+}
 
-    void CorporateOffice::callClient(std::string clientName, Employee employee)
-    {
-        std::cout << "Now " << employee.name << " is calling " << clientName << std::endl;
-    }
+void CorporateOffice::Employee::makeCopies(int numCopies)
+{
+    std::cout << "Now printing " << numCopies << " copies" << std::endl;
+}
 
-    void CorporateOffice::releasePayroll(Employee employeeOne, Employee employeeTwo)
-    {
-        employeeOne.salary += 4000.f;
-        employeeTwo.salary += 4000.f;
-    }
+void CorporateOffice::callClient(std::string clientName, Employee employee)
+{
+    std::cout << "Now " << employee.name << " is calling " << clientName << std::endl;
+}
 
-    void CorporateOffice::callSecurity(Employee securityGuard)
-    {
-        securityGuard.name = "THE BOSS, NOW";
-    }
+void CorporateOffice::releasePayroll(Employee employeeOne, Employee employeeTwo)
+{
+    employeeOne.salary += 4000.f;
+    employeeTwo.salary += 4000.f;
+}
+
+void CorporateOffice::callSecurity(Employee securityGuard)
+{
+    securityGuard.name = "THE BOSS, NOW";
+}
 
 struct DigitalKeyboard
 {
@@ -246,24 +246,25 @@ struct DigitalKeyboard
     void produceSound();
     void displayWaveForm();
 };
-    int DigitalKeyboard::changeOctave(int newOctave)
-    {
-        int octave = newOctave;
-        return octave;
-    }
-    
-    void DigitalKeyboard::produceSound()
-    {
-        std::cout << "Now playing sound" << std::endl;
-    }
 
-    void DigitalKeyboard::displayWaveForm()
-    {
-        std::cout << "Now displaying waveform" << std::endl;
-        std::cout << "   ~~~~    ~~~~    ~~~~    " << std::endl;
-        std::cout << " ~      ~        ~      ~  " << std::endl;
-        std::cout << "~        ~      ~        ~ " << std::endl;
-    }
+int DigitalKeyboard::changeOctave(int newOctave)
+{
+    int octave = newOctave;
+    return octave;
+}
+
+void DigitalKeyboard::produceSound()
+{
+    std::cout << "Now playing sound" << std::endl;
+}
+
+void DigitalKeyboard::displayWaveForm()
+{
+    std::cout << "Now displaying waveform" << std::endl;
+    std::cout << "   ~~~~    ~~~~    ~~~~    " << std::endl;
+    std::cout << " ~      ~        ~      ~  " << std::endl;
+    std::cout << "~        ~      ~        ~ " << std::endl;
+}
 
 struct PhoneBook
 {
@@ -278,25 +279,25 @@ struct PhoneBook
     void disintigrate();
 };
 
-    std::string PhoneBook::contactInformationDiplay(std::string contactName)
-    {
-        std::string phoneNumber = contactName + " 555-5555";
-        return phoneNumber;
-    }
+std::string PhoneBook::contactInformationDiplay(std::string contactName)
+{
+    std::string phoneNumber = contactName + " 555-5555";
+    return phoneNumber;
+}
 
-    void PhoneBook::openToRandomPage()
-    {
-        int min = 1;
-        int max = numberOfPages;
-    
-        int randomNumber = rand() % (max - min + 1) + min;
-        std::cout << "Opening page " << randomNumber << std::endl;
-    }
+void PhoneBook::openToRandomPage()
+{
+    int min = 1;
+    int max = numberOfPages;
 
-    void PhoneBook::disintigrate()
-    {
-        std::cout << "Uahghghgllll I'm disintigrating" << std::endl;
-    }
+    int randomNumber = rand() % (max - min + 1) + min;
+    std::cout << "Opening page " << randomNumber << std::endl;
+}
+
+void PhoneBook::disintigrate()
+{
+    std::cout << "Uahghghgllll I'm disintigrating" << std::endl;
+}
 
 struct ElectricHeater
 {
@@ -324,39 +325,34 @@ struct ElectricHeater
     int displayCurrentTemperature();
 };
 
-    void ElectricHeater::HeatingElement::slowCoolDown(int coolDownTime)
-    {
-        for (int i = 0; i < coolDownTime; ++i)
-            {
-                resistance --;
-            
-             }
-    }
+void ElectricHeater::HeatingElement::slowCoolDown(int coolDownTime)
+{
+    std::cout << "It's time to cool down, it will take " << coolDownTime << "seconds" << std::endl;
+}
 
-    void ElectricHeater::HeatingElement::slowHeatUp(int heatUpTime)
-    {
-        for (int i = 0; i < heatUpTime; ++i)
-            {
-                resistance ++;
-            }
-    }
+void ElectricHeater::HeatingElement::slowHeatUp(int heatUpTime)
+{
+    std::cout << "It's time to heat up, it will take " << heatUpTime << "seconds" << std::endl;
+}
 
-    void ElectricHeater::HeatingElement::changeTemperature(int newTemperature)
-    {
-        voltage = 0;
-        std::cout << "Haha gotcha, you wanted " << newTemperature << std::endl;
-    }
+void ElectricHeater::HeatingElement::changeTemperature(int newTemperature)
+{
+    voltage = 0;
+    std::cout << "Haha gotcha, you wanted " << newTemperature << std::endl;
+}
 
-    void ElectricHeater::produceHeat()
-    {
-        powerSavingMode = false;
-    }
+void ElectricHeater::produceHeat()
+{
+    powerSavingMode = false;
+}
 
-    void ElectricHeater::triggerCountdownTimer(float tippingMovement)
+void ElectricHeater::triggerCountdownTimer(float tippingMovement)
+{
+    if (tippingMovement > 0.5f)
     {
-        if (tippingMovement > 0.5f)
-            powerSavingMode = true;
+        powerSavingMode = true;
     }
+}
 
 struct Oscillator
 {
@@ -371,23 +367,23 @@ struct Oscillator
     int changeOctave(int newOctave);
 };
 
-    float Oscillator::changePitch(float newPitch)
-    {
-        pitch = newPitch;
-        return pitch;
-    }
+float Oscillator::changePitch(float newPitch)
+{
+    pitch = newPitch;
+    return pitch;
+}
 
-    float Oscillator::changePulseWidth(float newPulseWidth)
-    {
-        pulseWidth = newPulseWidth;
-        return pulseWidth;
-    }
+float Oscillator::changePulseWidth(float newPulseWidth)
+{
+    pulseWidth = newPulseWidth;
+    return pulseWidth;
+}
 
-    int Oscillator::changeOctave(int newOctave)
-    {
-        octave = octave + (newOctave * 16);
-        return octave;
-    }
+int Oscillator::changeOctave(int newOctave)
+{
+    octave = octave + (newOctave * 16);
+    return octave;
+}
 
 struct EnvelopeGenerator
 {
@@ -402,32 +398,32 @@ struct EnvelopeGenerator
     void remainOpen();
 };
 
-    void EnvelopeGenerator::playShortEnvelope(double newReleaseSpeed)
-    {
-        attackSpeed = 0.01;
-        decaySpeed = 0.01;
-        releaseSpeed = newReleaseSpeed;
-        sustainLevel = 0.0;
-        delayLength = 0.0;
-    }
+void EnvelopeGenerator::playShortEnvelope(double newReleaseSpeed)
+{
+    attackSpeed = 0.01;
+    decaySpeed = 0.01;
+    releaseSpeed = newReleaseSpeed;
+    sustainLevel = 0.0;
+    delayLength = 0.0;
+}
 
-    void EnvelopeGenerator::playLongEnvelope(double newAttackSpeed, double newReleaseSpeed)
-    {
-        attackSpeed = newAttackSpeed;
-        decaySpeed = 0.1;
-        releaseSpeed = newReleaseSpeed;
-        sustainLevel = 0.5;
-        delayLength = 0.1;
-    }
+void EnvelopeGenerator::playLongEnvelope(double newAttackSpeed, double newReleaseSpeed)
+{
+    attackSpeed = newAttackSpeed;
+    decaySpeed = 0.1;
+    releaseSpeed = newReleaseSpeed;
+    sustainLevel = 0.5;
+    delayLength = 0.1;
+}
 
-    void EnvelopeGenerator::remainOpen()
-    {
-        attackSpeed = 0.0;
-        decaySpeed = 0.0;
-        releaseSpeed = 1.0;
-        sustainLevel = 1.0;
-        delayLength = 0.0;
-    }
+void EnvelopeGenerator::remainOpen()
+{
+    attackSpeed = 0.0;
+    decaySpeed = 0.0;
+    releaseSpeed = 1.0;
+    sustainLevel = 1.0;
+    delayLength = 0.0;
+}
 
 struct BandPassFilter
 {
@@ -442,28 +438,28 @@ struct BandPassFilter
     std::string changeFilterSlope(std::string newFilterSlope);
 };
 
-    float BandPassFilter::changeBPCutoff(float newBPCutoff)
-    {
-        highPassCutoff = newBPCutoff - 20;
-        lowPassCutoff = newBPCutoff + 20;
-        std::cout << newBPCutoff << "Hz" << std::endl;
-        return newBPCutoff;
-    }
+float BandPassFilter::changeBPCutoff(float newBPCutoff)
+{
+    highPassCutoff = newBPCutoff - 20;
+    lowPassCutoff = newBPCutoff + 20;
+    std::cout << newBPCutoff << "Hz" << std::endl;
+    return newBPCutoff;
+}
 
-    float BandPassFilter::changeBPResonance(float newBPResonance)
-    {
-        highPassResonance = newBPResonance;
-        lowPassResonance = newBPResonance;
-        std::cout << newBPResonance << "Q" << std::endl;
-        return newBPResonance;
-    }
+float BandPassFilter::changeBPResonance(float newBPResonance)
+{
+    highPassResonance = newBPResonance;
+    lowPassResonance = newBPResonance;
+    std::cout << newBPResonance << "Q" << std::endl;
+    return newBPResonance;
+}
 
-    std::string BandPassFilter::changeFilterSlope(std::string newFilterSlope)
-    {
-        filterSlope = newFilterSlope;
-        std::cout << newFilterSlope << std::endl;
-        return newFilterSlope;
-    }
+std::string BandPassFilter::changeFilterSlope(std::string newFilterSlope)
+{
+    filterSlope = newFilterSlope;
+    std::cout << newFilterSlope << std::endl;
+    return newFilterSlope;
+}
 
 struct SampleAndHold
 {
@@ -478,26 +474,26 @@ struct SampleAndHold
     float changeOutput(float newOutput);
 };
 
-    float SampleAndHold::changeClockFrequency(float newClockFrequency)
-    {
-        clockRandomness = 0.0;
-        clockFrequency = newClockFrequency;
-        return newClockFrequency;
-    }
+float SampleAndHold::changeClockFrequency(float newClockFrequency)
+{
+    clockRandomness = 0.0;
+    clockFrequency = newClockFrequency;
+    return newClockFrequency;
+}
 
-    float SampleAndHold::changeClockRandomness(float newClockRandomness)
-    {
-        outputSlewRate = 0.0;
-        clockRandomness = newClockRandomness;
-        return newClockRandomness;
-    }
+float SampleAndHold::changeClockRandomness(float newClockRandomness)
+{
+    outputSlewRate = 0.0;
+    clockRandomness = newClockRandomness;
+    return newClockRandomness;
+}
 
-    float SampleAndHold::changeOutput(float newOutput)
-    {
-        outputSlewRate = 0.0;
-        output = newOutput;
-        return newOutput;
-    }
+float SampleAndHold::changeOutput(float newOutput)
+{
+    outputSlewRate = 0.0;
+    output = newOutput;
+    return newOutput;
+}
 
 struct Delay
 {
@@ -512,31 +508,24 @@ struct Delay
     double changeWetVolume(double newWetVolume);
 };
 
-    std::string Delay::changeDelayRate(std::string newDelayRate)
-    {
-        if (newDelayRate.empty())
-            {
-                std::cout << "Error: Delay Rate Cannot be Empty" << std::endl;
-                return delayRate;
-            }
+std::string Delay::changeDelayRate(std::string newDelayRate)
+{
+    delayRate = newDelayRate;
+    return delayRate;
+}
 
-            delayRate = newDelayRate;
+float Delay::changeFeedbackAmount(float newFeedbackAmount)
+{
+    feedbackAmount = newFeedbackAmount;
+    return newFeedbackAmount;
+}
 
-            return delayRate;
-    }
-
-    float Delay::changeFeedbackAmount(float newFeedbackAmount)
-    {
-        feedbackAmount = newFeedbackAmount;
-        return newFeedbackAmount;
-    }
-
-    double Delay::changeWetVolume(double newWetVolume)
-    {
-        wetVolume = newWetVolume;
-        dryVolume = 1.0 - newWetVolume;
-        return newWetVolume;
-    }
+double Delay::changeWetVolume(double newWetVolume)
+{
+    wetVolume = newWetVolume;
+    dryVolume = 1.0 - newWetVolume;
+    return newWetVolume;
+}
 
 struct ImaginaryKorg
 {
@@ -551,24 +540,24 @@ struct ImaginaryKorg
     void randomlyGenerateNotes(SampleAndHold randomPattern);
 };
 
-    void ImaginaryKorg::playPrettyNote(Oscillator sawtoothNote, EnvelopeGenerator newEnvelope, Delay prettyDelay)
-    {
-        oscillator.changePitch(sawtoothNote.changePitch(770.f));
-        bandPassFilter.changeBPCutoff(prettyDelay.changeFeedbackAmount(0.5f));
-        envelopeGenerator.playLongEnvelope(newEnvelope.attackSpeed, newEnvelope.releaseSpeed);
-    }
+void ImaginaryKorg::playPrettyNote(Oscillator sawtoothNote, EnvelopeGenerator newEnvelope, Delay prettyDelay)
+{
+    oscillator.changePitch(sawtoothNote.changePitch(770.f));
+    bandPassFilter.changeBPCutoff(prettyDelay.changeFeedbackAmount(0.5f));
+    envelopeGenerator.playLongEnvelope(newEnvelope.attackSpeed, newEnvelope.releaseSpeed);
+}
 
-    void ImaginaryKorg::playNoise(Oscillator noise)
-    {
-        oscillator.changePitch(noise.changePitch(1000.f));
-        sampleAndHold.changeClockRandomness(0.5f);
-        sampleAndHold.changeClockFrequency(100.0f);
-    }
+void ImaginaryKorg::playNoise(Oscillator noise)
+{
+    oscillator.changePitch(noise.changePitch(1000.f));
+    sampleAndHold.changeClockRandomness(0.5f);
+    sampleAndHold.changeClockFrequency(100.0f);
+}
 
-    void ImaginaryKorg::randomlyGenerateNotes(SampleAndHold randomPattern)
-    {
-        oscillator.changePitch(randomPattern.changeOutput(0.5f));
-    }
+void ImaginaryKorg::randomlyGenerateNotes(SampleAndHold randomPattern)
+{
+    oscillator.changePitch(randomPattern.changeOutput(0.5f));
+}
 
 int main()
 {
