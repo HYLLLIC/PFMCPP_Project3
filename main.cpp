@@ -82,6 +82,8 @@ struct CorporateOffice
     float temperatureSetting = 70.f;
     std::string address = "4321 Main St";
 
+    CorporateOffice();
+
     struct Employee
     {
         std::string name = "John Doe";
