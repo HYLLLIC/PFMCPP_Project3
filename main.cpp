@@ -76,16 +76,17 @@ int main()
 
 struct CorporateOffice
 {
+    CorporateOffice();
+
     int numberOfEmployees = 100;
     int numberOfElevators = 2;
     float averageSalary = 70000.f;
     float temperatureSetting = 70.f;
     std::string address = "4321 Main St";
 
-    CorporateOffice();
-
     struct Employee
     {
+        Employee();
         std::string name = "John Doe";
         std::string jobTitle = "Staff";
         std::string department = "Administration";
@@ -101,6 +102,16 @@ struct CorporateOffice
     void releasePayroll(Employee employeeOne, Employee employeeTwo);
     void callSecurity(Employee securityGuard);
 };
+
+CorporateOffice::CorporateOffice()
+{
+    std::cout << "The new office is ready for business!" << std::endl;
+}
+
+CorporateOffice::Employee::Employee()
+{
+    std::cout << "Welcome to the family, " << name << "!" << std::endl;
+}
 
 void CorporateOffice::Employee::clockIn(double timeIn)
 {
@@ -464,8 +475,11 @@ int main()
 
     //add your code between these =====
     //==============================
+    CorporateOffice orphanCrushingMachineInc;
+    CorporateOffice::Employee newbie;
 
-
+    newbie.makeCopies(20);
+    
 
     //==============================
     std::cout << "good to go!" << std::endl;
