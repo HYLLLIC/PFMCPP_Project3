@@ -495,7 +495,7 @@ std::string Delay::changeDelayRate(std::string newDelayRate)
 float Delay::changeFeedbackAmount(float newFeedbackAmount)
 {
     feedbackAmount = newFeedbackAmount;
-    std::cout << "The delay rate is now " << delayRate << std::endl;
+    std::cout << "The delay rate is currently " << delayRate << std::endl;
     return newFeedbackAmount;
 }
 
