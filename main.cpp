@@ -39,28 +39,23 @@ int main()
 
 //call Example::main()
 
-
-
-
-
-
 struct CorporateOffice
 {
     CorporateOffice();
-    int numberOfEmployees = 100;
-    int numberOfElevators = 2;
-    float averageSalary = 70000.f;
-    float temperatureSetting = 70.f;
-    std::string address = "4321 Main St";
+    int numberOfEmployees;
+    int numberOfElevators;
+    float averageSalary;
+    float temperatureSetting;
+    std::string address;
 
     struct Employee
     {
         Employee();
-        std::string name = "John Doe";
-        std::string jobTitle = "Staff";
-        std::string department = "Administration";
-        float salary = 50000.f;
-        int timeAtCompany = 1;
+        std::string name;
+        std::string jobTitle;
+        std::string department;
+        float salary;
+        int timeAtCompany;
 
         void clockIn(double timeIn);
         void clockOut(double timeOut);
@@ -72,19 +67,29 @@ struct CorporateOffice
     void callSecurity(Employee securityGuard);
 };
 
-CorporateOffice::CorporateOffice()
+CorporateOffice::CorporateOffice() :
+numberOfEmployees(100),
+numberOfElevators(2),
+averageSalary(70000.f),
+temperatureSetting(70.f),
+address("4321 Main St")
 {
     std::cout << "The new corporate office is ready for business!" << std::endl;
 }
 
-CorporateOffice::Employee::Employee()
+CorporateOffice::Employee::Employee() :
+name("John Doe"),
+jobTitle("Staff"),
+department("Administration"),
+salary(50000.f),
+timeAtCompany(1)
 {
     std::cout << "Welcome to the family, " << name << " as the new Emplyee!" << std::endl;
 }
 
 void CorporateOffice::Employee::clockIn(double timeIn)
 {
-    std::cout << "Welcome, it's " << timeIn << "AM" << std::endl;
+    std::cout << "Welcome, " << name <<  " it is " << timeIn << "AM" << std::endl;
 }
 
 void CorporateOffice::Employee::clockOut(double timeOut)
@@ -94,7 +99,7 @@ void CorporateOffice::Employee::clockOut(double timeOut)
 
 void CorporateOffice::Employee::makeCopies(int numCopies)
 {
-    std::cout << "Now printing " << numCopies << " copies" << std::endl;
+    std::cout << "Now printing " << numCopies << " copies for the " << department << " meeting." << std::endl;
 }
 
 void CorporateOffice::callClient(std::string clientName, Employee employee)
@@ -145,7 +150,7 @@ void DigitalKeyboard::produceSound()
 
 void DigitalKeyboard::displayWaveForm()
 {
-    std::cout << "Now displaying waveform" << std::endl;
+    std::cout << "Now displaying waveform, sample rate is " << sampleRate << "." << std::endl;
     std::cout << "   ~~~~    ~~~~    ~~~~    " << std::endl;
     std::cout << " ~      ~        ~      ~  " << std::endl;
     std::cout << "~        ~      ~        ~ " << std::endl;
@@ -154,18 +159,23 @@ void DigitalKeyboard::displayWaveForm()
 struct PhoneBook
 {
     PhoneBook();
-    int numberOfPages = 1000;
-    float bookWeight = 2.2f;
-    std::string telephoneCompany = "Yellowpages";
-    float bookAge = 3.1f;
-    float glueStrength = 1.7f;
+    int numberOfPages;
+    float bookWeight;
+    std::string telephoneCompany;
+    float bookAge;
+    float glueStrength;
 
     std::string contactInformationDiplay(std::string contactName);
     void openToRandomPage();
     void disintigrate();
 };
 
-PhoneBook::PhoneBook()
+PhoneBook::PhoneBook() :
+numberOfPages(1000),
+bookWeight(2.2f),
+telephoneCompany("Yellowpages"),
+bookAge(3.1f),
+glueStrength(1.7f)
 {
     std::cout << "Delivering new Phonebook!" << std::endl;
 }
