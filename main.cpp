@@ -41,21 +41,23 @@ int main()
 
 struct CorporateOffice
 {
-    CorporateOffice();
     int numberOfEmployees;
     int numberOfElevators;
     float averageSalary;
     float temperatureSetting;
     std::string address;
 
+    CorporateOffice();
+
     struct Employee
     {
-        Employee();
         std::string name;
         std::string jobTitle;
         std::string department;
         float salary;
         int timeAtCompany;
+
+        Employee();    
 
         void clockIn(double timeIn);
         void clockOut(double timeOut);
@@ -120,19 +122,21 @@ void CorporateOffice::callSecurity(Employee securityGuard)
 
 struct DigitalKeyboard
 {
-    DigitalKeyboard();
     int NumbersOfKeys = 25;
     float voltage = 9.f;
-    int screentBrightness = 1000;
+    int screentBrightness;
     double memoryAmount = 80.0;
     int sampleRate = 44100;
+
+    DigitalKeyboard();
 
     int changeOctave(int newOctave);
     void produceSound();
     void displayWaveForm();
 };
 
-DigitalKeyboard::DigitalKeyboard ()
+DigitalKeyboard::DigitalKeyboard () :
+screentBrightness(1000)
 {
     std::cout << "Booting up new keyboard!" << std::endl;
 }
@@ -158,7 +162,6 @@ void DigitalKeyboard::displayWaveForm()
 
 struct PhoneBook
 {
-    PhoneBook();
     int numberOfPages;
     float bookWeight;
     std::string telephoneCompany;
@@ -168,6 +171,8 @@ struct PhoneBook
     std::string contactInformationDiplay(std::string contactName);
     void openToRandomPage();
     void disintigrate();
+
+    PhoneBook();
 };
 
 PhoneBook::PhoneBook() :
@@ -192,22 +197,23 @@ void PhoneBook::openToRandomPage()
     int max = numberOfPages;
 
     int randomNumber = rand() % (max - min + 1) + min;
-    std::cout << "Opening page " << randomNumber << std::endl;
+    std::cout << "Opening page, out of " << numberOfPages << " pages, we open to "<< randomNumber << std::endl;
 }
 
 void PhoneBook::disintigrate()
 {
-    std::cout << "Uahghghgllll I'm disintigrating" << std::endl;
+    std::cout << "Uahghghgllll the " << telephoneCompany << " phone book is disintigrating" << std::endl;
 }
 
 struct ElectricHeater
 {
-    ElectricHeater();
     float wattage = 1500.f;
     int numberOfSettings = 3;
-    int temperatureSetting = 72;
+    int temperatureSetting;
     char pivotMode = 'A';
     bool powerSavingMode = true;
+
+    ElectricHeater();
 
     struct HeatingElement
     {
@@ -228,7 +234,8 @@ struct ElectricHeater
     int displayCurrentTemperature();
 };
 
-ElectricHeater::ElectricHeater()
+ElectricHeater::ElectricHeater() :
+temperatureSetting(72)
 {
     std::cout << "Firing up new heater!" << std::endl;
 }
@@ -240,7 +247,7 @@ ElectricHeater::HeatingElement::HeatingElement()
 
 void ElectricHeater::HeatingElement::slowCoolDown(int coolDownTime)
 {
-    std::cout << "It's time to cool down, it will take " << coolDownTime << "seconds" << std::endl;
+    std::cout << "It's time to cool down, it will take " << layoutType << " coil " << coolDownTime << "seconds to cool down." << std::endl;
 }
 
 void ElectricHeater::HeatingElement::slowHeatUp(int heatUpTime)
@@ -257,6 +264,7 @@ void ElectricHeater::HeatingElement::changeTemperature(int newTemperature)
 void ElectricHeater::produceHeat()
 {
     powerSavingMode = false;
+    std::cout << "Now producing heat, temperature setting is " << temperatureSetting << std::endl;
 }
 
 void ElectricHeater::triggerCountdownTimer(float tippingMovement)
@@ -269,24 +277,30 @@ void ElectricHeater::triggerCountdownTimer(float tippingMovement)
 
 int ElectricHeater::displayCurrentTemperature()
 {
+    std::cout << "Current temperature is " << temperatureSetting << std::endl;
     return temperatureSetting;
 }
 
 struct Oscillator
 {
-    Oscillator();
     float pitch = 440.f;
-    std::string waveForm = "Sawtooth";
-    float pulseWidth = 0.5f;
-    double volume = 50.0;
+    std::string waveForm;
+    float pulseWidth;
+    double volume;
     int octave = 16;
+
+    Oscillator();
 
     float changePitch(float newPitch);
     float changePulseWidth(float newPulseWidth);
     int changeOctave(int newOctave);
+
 };
 
-Oscillator::Oscillator()
+Oscillator::Oscillator() :
+waveForm("Sawtooth"),
+pulseWidth(0.5f),
+volume(50.0)
 {
     std::cout << "We have a new oscillator!" << std::endl;
 }
@@ -294,6 +308,7 @@ Oscillator::Oscillator()
 float Oscillator::changePitch(float newPitch)
 {
     pitch = newPitch;
+    std::cout << "The pitch is now " << pitch << std::endl;
     return pitch;
 }
 
@@ -311,19 +326,24 @@ int Oscillator::changeOctave(int newOctave)
 
 struct EnvelopeGenerator
 {
-    EnvelopeGenerator();
-    double attackSpeed = 0.01;
-    double decaySpeed = 0.05;
-    double sustainLevel = 0.5;
-    double releaseSpeed = 0.1;
+    double attackSpeed;
+    double decaySpeed;
+    double sustainLevel;
+    double releaseSpeed;
     double delayLength = 0.0;
+
+    EnvelopeGenerator();
 
     void playShortEnvelope(double newReleaseSpeed);
     void playLongEnvelope(double newAttackSpeed, double newReleaseSpeed);
     void remainOpen();
 };
 
-EnvelopeGenerator::EnvelopeGenerator()
+EnvelopeGenerator::EnvelopeGenerator() :
+attackSpeed(0.01),
+decaySpeed(0.05),
+sustainLevel(0.5),
+releaseSpeed(0.1)
 {
     std::cout << "New envelope ready!" << std::endl;
 }
@@ -335,6 +355,7 @@ void EnvelopeGenerator::playShortEnvelope(double newReleaseSpeed)
     releaseSpeed = newReleaseSpeed;
     sustainLevel = 0.0;
     delayLength = 0.0;
+    std::cout << "Envelope is now playing short envelope with release speed: " << releaseSpeed << std::endl;
 }
 
 void EnvelopeGenerator::playLongEnvelope(double newAttackSpeed, double newReleaseSpeed)
@@ -357,19 +378,21 @@ void EnvelopeGenerator::remainOpen()
 
 struct BandPassFilter
 {
-    BandPassFilter();
     float highPassCutoff = 20.f;
     float lowPassCutoff = 1000.f;
     float highPassResonance = 0.f;
     float lowPassResonance = 0.f;
-    std::string filterSlope = "12 dB/Oct";
+    std::string filterSlope;
+
+    BandPassFilter();
 
     float changeBPCutoff(float newBPCutoff);
     float changeBPResonance(float newBPResonance);
     std::string changeFilterSlope(std::string newFilterSlope);
 };
 
-BandPassFilter::BandPassFilter()
+BandPassFilter::BandPassFilter() :
+filterSlope("12 dB/Oct")
 {
     std::cout << "Band pass filter is ready!" << std::endl;
 }
@@ -393,25 +416,28 @@ float BandPassFilter::changeBPResonance(float newBPResonance)
 std::string BandPassFilter::changeFilterSlope(std::string newFilterSlope)
 {
     filterSlope = newFilterSlope;
-    std::cout << newFilterSlope << std::endl;
+    std::cout << "The filter slope is now " << newFilterSlope << std::endl;
     return newFilterSlope;
 }
 
 struct SampleAndHold
 {
-    SampleAndHold();
     float clockFrequency = 5.f;
     double inputVoltage = 2.0;
     float output = 5.f;
-    double outputSlewRate = 0.0;
-    float clockRandomness = 0.5f;
+    double outputSlewRate;
+    float clockRandomness;
+
+    SampleAndHold();
 
     float changeClockFrequency(float newClockFrequency);
     float changeClockRandomness(float newClockRandomness);
     float changeOutput(float newOutput);
 };
 
-SampleAndHold::SampleAndHold()
+SampleAndHold::SampleAndHold() :
+outputSlewRate(0.0),
+clockRandomness(0.5f)
 {
     std::cout << "New Sample and Hold is ready!" << std::endl;
 }
@@ -434,24 +460,28 @@ float SampleAndHold::changeOutput(float newOutput)
 {
     outputSlewRate = 0.0;
     output = newOutput;
+    std::cout << "The slew rate is currently " << outputSlewRate << std::endl;
+    std::cout << "The clock randomness is currently " << clockRandomness << std::endl;
     return newOutput;
 }
 
 struct Delay
 {
-    Delay();
-    std::string delayRate = "1/4";
+    std::string delayRate;
     float feedbackAmount = 0.5f;
     double wetVolume = 0.5;
     double dryVolume = 0.5;
     int delayFidelity = 10;
+
+    Delay();
 
     std::string changeDelayRate(std::string newDelayRate);
     float changeFeedbackAmount(float newFeedbackAmount);
     double changeWetVolume(double newWetVolume);
 };
 
-Delay::Delay()
+Delay::Delay() :
+delayRate("1/4")
 {
     std::cout << "New delay is ready, ready, ready..." << std::endl;
 }
@@ -465,6 +495,7 @@ std::string Delay::changeDelayRate(std::string newDelayRate)
 float Delay::changeFeedbackAmount(float newFeedbackAmount)
 {
     feedbackAmount = newFeedbackAmount;
+    std::cout << "The delay rate is now " << delayRate << std::endl;
     return newFeedbackAmount;
 }
 
@@ -477,12 +508,13 @@ double Delay::changeWetVolume(double newWetVolume)
 
 struct ImaginaryKorg
 {
-    ImaginaryKorg();
     Oscillator oscillator;
     EnvelopeGenerator envelopeGenerator;
     BandPassFilter bandPassFilter;
     SampleAndHold sampleAndHold;
     Delay delay;
+
+    ImaginaryKorg();
 
     void playPrettyNote(Oscillator sawtoothNote, EnvelopeGenerator newEnvelope, Delay prettyDelay);
     void playNoise(Oscillator noise);
