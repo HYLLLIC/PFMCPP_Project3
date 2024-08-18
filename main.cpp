@@ -76,6 +76,7 @@ int main()
 
 struct CorporateOffice
 {
+    CorporateOffice();
     int numberOfEmployees = 100;
     int numberOfElevators = 2;
     float averageSalary = 70000.f;
@@ -84,6 +85,7 @@ struct CorporateOffice
 
     struct Employee
     {
+        Employee();
         std::string name = "John Doe";
         std::string jobTitle = "Staff";
         std::string department = "Administration";
@@ -99,6 +101,16 @@ struct CorporateOffice
     void releasePayroll(Employee employeeOne, Employee employeeTwo);
     void callSecurity(Employee securityGuard);
 };
+
+CorporateOffice::CorporateOffice()
+{
+    std::cout << "The new corporate office is ready for business!" << std::endl;
+}
+
+CorporateOffice::Employee::Employee()
+{
+    std::cout << "Welcome to the family, " << name << " as the new Emplyee!" << std::endl;
+}
 
 void CorporateOffice::Employee::clockIn(double timeIn)
 {
@@ -133,6 +145,7 @@ void CorporateOffice::callSecurity(Employee securityGuard)
 
 struct DigitalKeyboard
 {
+    DigitalKeyboard();
     int NumbersOfKeys = 25;
     float voltage = 9.f;
     int screentBrightness = 1000;
@@ -143,6 +156,11 @@ struct DigitalKeyboard
     void produceSound();
     void displayWaveForm();
 };
+
+DigitalKeyboard::DigitalKeyboard ()
+{
+    std::cout << "Booting up new keyboard!" << std::endl;
+}
 
 int DigitalKeyboard::changeOctave(int newOctave)
 {
@@ -165,6 +183,7 @@ void DigitalKeyboard::displayWaveForm()
 
 struct PhoneBook
 {
+    PhoneBook();
     int numberOfPages = 1000;
     float bookWeight = 2.2f;
     std::string telephoneCompany = "Yellowpages";
@@ -175,6 +194,11 @@ struct PhoneBook
     void openToRandomPage();
     void disintigrate();
 };
+
+PhoneBook::PhoneBook()
+{
+    std::cout << "Delivering new Phonebook!" << std::endl;
+}
 
 std::string PhoneBook::contactInformationDiplay(std::string contactName)
 {
@@ -198,6 +222,7 @@ void PhoneBook::disintigrate()
 
 struct ElectricHeater
 {
+    ElectricHeater();
     float wattage = 1500.f;
     int numberOfSettings = 3;
     int temperatureSetting = 72;
@@ -206,6 +231,7 @@ struct ElectricHeater
 
     struct HeatingElement
     {
+        HeatingElement();
         int resistance = 10;
         int voltage = 120;
         float elementLength = 24.0f;
@@ -221,6 +247,16 @@ struct ElectricHeater
     void triggerCountdownTimer(float tippingMovement);
     int displayCurrentTemperature();
 };
+
+ElectricHeater::ElectricHeater()
+{
+    std::cout << "Firing up new heater!" << std::endl;
+}
+
+ElectricHeater::HeatingElement::HeatingElement()
+{
+    std::cout << "New heating element added!" << std::endl;
+}
 
 void ElectricHeater::HeatingElement::slowCoolDown(int coolDownTime)
 {
@@ -251,8 +287,14 @@ void ElectricHeater::triggerCountdownTimer(float tippingMovement)
     }
 }
 
+int ElectricHeater::displayCurrentTemperature()
+{
+    return temperatureSetting;
+}
+
 struct Oscillator
 {
+    Oscillator();
     float pitch = 440.f;
     std::string waveForm = "Sawtooth";
     float pulseWidth = 0.5f;
@@ -263,6 +305,11 @@ struct Oscillator
     float changePulseWidth(float newPulseWidth);
     int changeOctave(int newOctave);
 };
+
+Oscillator::Oscillator()
+{
+    std::cout << "We have a new oscillator!" << std::endl;
+}
 
 float Oscillator::changePitch(float newPitch)
 {
@@ -284,6 +331,7 @@ int Oscillator::changeOctave(int newOctave)
 
 struct EnvelopeGenerator
 {
+    EnvelopeGenerator();
     double attackSpeed = 0.01;
     double decaySpeed = 0.05;
     double sustainLevel = 0.5;
@@ -294,6 +342,11 @@ struct EnvelopeGenerator
     void playLongEnvelope(double newAttackSpeed, double newReleaseSpeed);
     void remainOpen();
 };
+
+EnvelopeGenerator::EnvelopeGenerator()
+{
+    std::cout << "New envelope ready!" << std::endl;
+}
 
 void EnvelopeGenerator::playShortEnvelope(double newReleaseSpeed)
 {
@@ -324,6 +377,7 @@ void EnvelopeGenerator::remainOpen()
 
 struct BandPassFilter
 {
+    BandPassFilter();
     float highPassCutoff = 20.f;
     float lowPassCutoff = 1000.f;
     float highPassResonance = 0.f;
@@ -334,6 +388,11 @@ struct BandPassFilter
     float changeBPResonance(float newBPResonance);
     std::string changeFilterSlope(std::string newFilterSlope);
 };
+
+BandPassFilter::BandPassFilter()
+{
+    std::cout << "Band pass filter is ready!" << std::endl;
+}
 
 float BandPassFilter::changeBPCutoff(float newBPCutoff)
 {
@@ -360,6 +419,7 @@ std::string BandPassFilter::changeFilterSlope(std::string newFilterSlope)
 
 struct SampleAndHold
 {
+    SampleAndHold();
     float clockFrequency = 5.f;
     double inputVoltage = 2.0;
     float output = 5.f;
@@ -370,6 +430,11 @@ struct SampleAndHold
     float changeClockRandomness(float newClockRandomness);
     float changeOutput(float newOutput);
 };
+
+SampleAndHold::SampleAndHold()
+{
+    std::cout << "New Sample and Hold is ready!" << std::endl;
+}
 
 float SampleAndHold::changeClockFrequency(float newClockFrequency)
 {
@@ -394,6 +459,7 @@ float SampleAndHold::changeOutput(float newOutput)
 
 struct Delay
 {
+    Delay();
     std::string delayRate = "1/4";
     float feedbackAmount = 0.5f;
     double wetVolume = 0.5;
@@ -404,6 +470,11 @@ struct Delay
     float changeFeedbackAmount(float newFeedbackAmount);
     double changeWetVolume(double newWetVolume);
 };
+
+Delay::Delay()
+{
+    std::cout << "New delay is ready, ready, ready..." << std::endl;
+}
 
 std::string Delay::changeDelayRate(std::string newDelayRate)
 {
@@ -426,6 +497,7 @@ double Delay::changeWetVolume(double newWetVolume)
 
 struct ImaginaryKorg
 {
+    ImaginaryKorg();
     Oscillator oscillator;
     EnvelopeGenerator envelopeGenerator;
     BandPassFilter bandPassFilter;
@@ -436,6 +508,11 @@ struct ImaginaryKorg
     void playNoise(Oscillator noise);
     void randomlyGenerateNotes(SampleAndHold randomPattern);
 };
+
+ImaginaryKorg::ImaginaryKorg()
+{
+    std::cout << "New Imaginary Korg is ready!" << std::endl;
+}
 
 void ImaginaryKorg::playPrettyNote(Oscillator sawtoothNote, EnvelopeGenerator newEnvelope, Delay prettyDelay)
 {
@@ -462,8 +539,90 @@ int main()
 
     //add your code between these =====
     //==============================
+    CorporateOffice orphanCrushingMachineInc;
+    
+    CorporateOffice::Employee jackie;
+    
+    jackie.name = "Jackie";
+    jackie.clockIn(9.0);
+    jackie.clockOut(17.0);
+    jackie.makeCopies(20);
 
+    orphanCrushingMachineInc.callClient("HYLLLIC", jackie);
+    orphanCrushingMachineInc.releasePayroll(jackie, jackie);
+    orphanCrushingMachineInc.callSecurity(jackie);
 
+    std::cout << "Welcome " << jackie.name << "! Please report to " << jackie.department << std::endl;
+    
+    std::cout << "Boy, those " << jackie.salary << " dollars are gonna be a lot of money! " << std::endl;
+
+    DigitalKeyboard lilMidiKeyboard;
+
+    lilMidiKeyboard.changeOctave(2);
+    lilMidiKeyboard.produceSound();
+    lilMidiKeyboard.displayWaveForm();
+
+    PhoneBook olYellowPages;
+
+    olYellowPages.contactInformationDiplay("HYLLLIC INC");
+    olYellowPages.openToRandomPage();
+    olYellowPages.disintigrate();
+
+    ElectricHeater heater;
+
+    heater.produceHeat();
+    heater.triggerCountdownTimer(0.5f);
+    heater.displayCurrentTemperature();
+
+    ElectricHeater::HeatingElement newCoil;
+
+    newCoil.slowCoolDown(10);
+    newCoil.slowHeatUp(10);
+    newCoil.changeTemperature(80);
+
+    Oscillator oscOne;
+
+    oscOne.changePitch(777.f);
+    oscOne.changePulseWidth(0.1f);
+    oscOne.changeOctave(2);
+
+    EnvelopeGenerator ADSROne;
+
+    ADSROne.playShortEnvelope(.22);
+    ADSROne.playLongEnvelope(.57, 1.5);
+    ADSROne.remainOpen();
+
+    BandPassFilter newBPFilter;
+
+    newBPFilter.changeBPCutoff(1250.7f);
+    newBPFilter.changeBPResonance(0.25f);
+    newBPFilter.changeFilterSlope("24 dB/Oct");
+
+    SampleAndHold newSampAndHold;
+
+    newSampAndHold.changeClockFrequency(3.5f);
+    newSampAndHold.changeClockRandomness(0.75f);
+    newSampAndHold.changeOutput(0.2f);
+
+    Delay newDelay;
+
+    newDelay.changeDelayRate("1/8");
+    newDelay.changeFeedbackAmount(0.8f);
+    newDelay.changeWetVolume(0.33);
+
+    std::cout << "if my wet amount is " << newDelay.wetVolume << ", then my dry amount is " << newDelay.dryVolume << std::endl;
+
+    ImaginaryKorg korg;
+    
+    korg.playPrettyNote(oscOne, ADSROne, newDelay);
+    korg.playNoise(oscOne);
+    korg.randomlyGenerateNotes(newSampAndHold);
+
+    std::cout << "Let me see what the octave is: " << korg.oscillator.octave << " and what the pitch is: " << korg.oscillator.pitch << ", and good lord that feedback is too high: " << korg.delay.feedbackAmount << std::endl;
+    
+    korg.delay.feedbackAmount = .1f;
+    
+    std::cout << "Now lets see if that new feedback sounds better: " << korg.delay.feedbackAmount << std::endl;
 
     //==============================
     std::cout << "good to go!" << std::endl;
