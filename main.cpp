@@ -179,10 +179,11 @@ struct DigitalKeyboard
     int changeOctave(int newOctave);
     void produceSound();
     void displayWaveForm();
+    void powerDown();
 };
 
 DigitalKeyboard::DigitalKeyboard () :
-screentBrightness(1000)
+screentBrightness(10)
 {
     std::cout << "Booting up new keyboard!" << std::endl;
 }
@@ -204,6 +205,15 @@ void DigitalKeyboard::displayWaveForm()
     std::cout << "   ~~~~    ~~~~    ~~~~    " << std::endl;
     std::cout << " ~      ~        ~      ~  " << std::endl;
     std::cout << "~        ~      ~        ~ " << std::endl;
+}
+
+void DigitalKeyboard::powerDown()
+{
+    std::cout << "Powering down keyboard" << std::endl;
+    for (; screentBrightness > 0; --screentBrightness)
+    {
+        std::cout << "Goodbye in " << screentBrightness << std::endl;
+    }
 }
 
 struct PhoneBook
@@ -620,6 +630,7 @@ int main()
     lilMidiKeyboard.changeOctave(2);
     lilMidiKeyboard.produceSound();
     lilMidiKeyboard.displayWaveForm();
+    lilMidiKeyboard.powerDown();
 
     PhoneBook olYellowPages;
 
