@@ -95,6 +95,7 @@ struct CorporateOffice
         void clockIn(double timeIn);
         void clockOut(double timeOut);
         void makeCopies(int numCopies);
+        float negotiateRaise(float raiseAmount);
     };
 
     void callClient(std::string clientName, Employee employee);
@@ -151,6 +152,18 @@ void CorporateOffice::releasePayroll(Employee employeeOne, Employee employeeTwo)
 void CorporateOffice::callSecurity(Employee securityGuard)
 {
     securityGuard.name = "THE BOSS, NOW";
+}
+
+float CorporateOffice::Employee::negotiateRaise(float raiseAmount)
+{
+    float newSalary(salary);
+    while (newSalary < salary + raiseAmount)
+        {
+            newSalary+=(raiseAmount*.25f);
+            std::cout << name << " says, how about: " << newSalary << std::endl;
+        }
+    std::cout << "Fine! Get out of my office!" << std::endl;
+    return newSalary;
 }
 
 struct DigitalKeyboard
@@ -592,6 +605,7 @@ int main()
     jackie.clockIn(9.0);
     jackie.clockOut(17.0);
     jackie.makeCopies(20);
+    jackie.negotiateRaise(5000);
 
     orphanCrushingMachineInc.callClient("HYLLLIC", jackie);
     orphanCrushingMachineInc.releasePayroll(jackie, jackie);
