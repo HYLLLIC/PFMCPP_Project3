@@ -227,6 +227,7 @@ struct PhoneBook
     std::string contactInformationDiplay(std::string contactName);
     void openToRandomPage();
     void disintigrate();
+    int tearOutPages();
 
     PhoneBook();
 };
@@ -261,6 +262,24 @@ void PhoneBook::disintigrate()
     std::cout << "Uahghghgllll the " << telephoneCompany << " phone book is disintigrating" << std::endl;
 }
 
+int PhoneBook::tearOutPages()
+{
+    int pagesTorn = 0;
+    while (pagesTorn < numberOfPages)
+        {
+            int pagesToTear = (numberOfPages - pagesTorn) / 2 + 25;
+            if (pagesTorn + pagesToTear > numberOfPages) 
+                {
+                    pagesTorn = numberOfPages; 
+                }
+                {
+                    pagesTorn += pagesToTear;
+                    std::cout << "Tearing out " << pagesToTear << " pages." << std::endl;
+                }
+        }
+    return numberOfPages;
+}
+
 struct ElectricHeater
 {
     float wattage = 1500.f;
@@ -288,6 +307,7 @@ struct ElectricHeater
     void produceHeat();
     void triggerCountdownTimer(float tippingMovement);
     int displayCurrentTemperature();
+    void setPhonebookOnFire(PhoneBook phoneBookToBurn);
 };
 
 ElectricHeater::ElectricHeater() :
@@ -337,19 +357,29 @@ int ElectricHeater::displayCurrentTemperature()
     return temperatureSetting;
 }
 
+void ElectricHeater::setPhonebookOnFire(PhoneBook phoneBookToBurn)
+{
+    phoneBookToBurn.numberOfPages = 8;
+    for (; phoneBookToBurn.numberOfPages > 0; --phoneBookToBurn.numberOfPages)
+        {
+            std::cout << "Burning page " << phoneBookToBurn.numberOfPages << std::endl;
+        }
+}
+
 struct Oscillator
 {
     float pitch = 440.f;
     std::string waveForm;
     float pulseWidth;
     double volume;
-    int octave = 16;
+    int octave = 32;
 
     Oscillator();
 
     float changePitch(float newPitch);
     float changePulseWidth(float newPulseWidth);
     int changeOctave(int newOctave);
+    void moveOctaves(int numOctaves);
 
 };
 
@@ -380,6 +410,15 @@ int Oscillator::changeOctave(int newOctave)
     return octave;
 }
 
+void Oscillator::moveOctaves(int numOctaves)
+{
+    while (octave > 4)
+        {
+            octave = octave/numOctaves;
+            std::cout << "Now at " << octave << " octaves" << std::endl;
+        }
+}
+
 struct EnvelopeGenerator
 {
     double attackSpeed;
@@ -393,6 +432,7 @@ struct EnvelopeGenerator
     void playShortEnvelope(double newReleaseSpeed);
     void playLongEnvelope(double newAttackSpeed, double newReleaseSpeed);
     void remainOpen();
+    void cycleEnvelope(int keyPressTime);
 };
 
 EnvelopeGenerator::EnvelopeGenerator() :
@@ -432,6 +472,14 @@ void EnvelopeGenerator::remainOpen()
     delayLength = 0.0;
 }
 
+void EnvelopeGenerator::cycleEnvelope(int keyPressTime)
+{
+    for (int i = 0; i < keyPressTime; ++i)
+        {
+            std::cout << "/`-_" << std::endl;
+        }
+}
+
 struct BandPassFilter
 {
     float highPassCutoff = 20.f;
@@ -445,6 +493,7 @@ struct BandPassFilter
     float changeBPCutoff(float newBPCutoff);
     float changeBPResonance(float newBPResonance);
     std::string changeFilterSlope(std::string newFilterSlope);
+    void filterSweep(bool upOrDown);
 };
 
 BandPassFilter::BandPassFilter() :
@@ -476,12 +525,32 @@ std::string BandPassFilter::changeFilterSlope(std::string newFilterSlope)
     return newFilterSlope;
 }
 
+void BandPassFilter::filterSweep(bool upOrDown)
+{
+    if (upOrDown == true)
+    {
+        while (highPassCutoff < 20000)
+            {
+                changeBPCutoff(highPassCutoff + 800);
+                std::cout << "New filter cutoff is " << highPassCutoff << std::endl;
+            }
+    }
+    else
+    {
+        while (lowPassCutoff > 20)
+            {
+                changeBPCutoff(lowPassCutoff - 800);
+                std::cout << "New filter cutoff is " << lowPassCutoff << std::endl;
+            }
+    }
+}
+
 struct SampleAndHold
 {
     float clockFrequency = 5.f;
     double inputVoltage = 2.0;
     float output = 5.f;
-    double outputSlewRate;
+    int outputSlewRate;
     float clockRandomness;
 
     SampleAndHold();
@@ -489,10 +558,11 @@ struct SampleAndHold
     float changeClockFrequency(float newClockFrequency);
     float changeClockRandomness(float newClockRandomness);
     float changeOutput(float newOutput);
+    void clockRunDown();
 };
 
 SampleAndHold::SampleAndHold() :
-outputSlewRate(0.0),
+outputSlewRate(3),
 clockRandomness(0.5f)
 {
     std::cout << "New Sample and Hold is ready!" << std::endl;
@@ -507,18 +577,27 @@ float SampleAndHold::changeClockFrequency(float newClockFrequency)
 
 float SampleAndHold::changeClockRandomness(float newClockRandomness)
 {
-    outputSlewRate = 0.0;
+    outputSlewRate = 0;
     clockRandomness = newClockRandomness;
     return newClockRandomness;
 }
 
 float SampleAndHold::changeOutput(float newOutput)
 {
-    outputSlewRate = 0.0;
+    outputSlewRate = 0;
     output = newOutput;
     std::cout << "The slew rate is currently " << outputSlewRate << std::endl;
     std::cout << "The clock randomness is currently " << clockRandomness << std::endl;
     return newOutput;
+}
+
+void SampleAndHold::clockRunDown()
+{
+    while (clockFrequency > 0.f)
+        {
+            clockFrequency -= 1.f;
+            std::cout << "Clock frequency is now " << clockFrequency << std::endl;
+        }
 }
 
 struct Delay
@@ -534,6 +613,7 @@ struct Delay
     std::string changeDelayRate(std::string newDelayRate);
     float changeFeedbackAmount(float newFeedbackAmount);
     double changeWetVolume(double newWetVolume);
+    void screamingFeedbackOutro();
 };
 
 Delay::Delay() :
@@ -551,7 +631,6 @@ std::string Delay::changeDelayRate(std::string newDelayRate)
 float Delay::changeFeedbackAmount(float newFeedbackAmount)
 {
     feedbackAmount = newFeedbackAmount;
-    std::cout << "The delay rate is currently " << delayRate << std::endl;
     return newFeedbackAmount;
 }
 
@@ -560,6 +639,17 @@ double Delay::changeWetVolume(double newWetVolume)
     wetVolume = newWetVolume;
     dryVolume = 1.0 - newWetVolume;
     return newWetVolume;
+}
+
+void Delay::screamingFeedbackOutro()
+{
+    while (delayFidelity > 1)
+        {
+            delayFidelity -= 1;
+            changeWetVolume(wetVolume - 0.02);
+            changeFeedbackAmount(feedbackAmount + 0.02f);
+            std::cout << "Delay Fidelity: " << delayFidelity << " Volume: " << wetVolume << " FB Amount: " << feedbackAmount << std::endl;
+        }
 }
 
 struct ImaginaryKorg
@@ -575,6 +665,7 @@ struct ImaginaryKorg
     void playPrettyNote(Oscillator sawtoothNote, EnvelopeGenerator newEnvelope, Delay prettyDelay);
     void playNoise(Oscillator noise);
     void randomlyGenerateNotes(SampleAndHold randomPattern);
+    void playNotes(int numberOfNotes);
 };
 
 ImaginaryKorg::ImaginaryKorg()
@@ -599,6 +690,19 @@ void ImaginaryKorg::playNoise(Oscillator noise)
 void ImaginaryKorg::randomlyGenerateNotes(SampleAndHold randomPattern)
 {
     oscillator.changePitch(randomPattern.changeOutput(0.5f));
+}
+
+void ImaginaryKorg::playNotes(int numberOfNotes)
+{
+    Oscillator newOsc;
+    EnvelopeGenerator newEnv;
+    Delay newDel;
+    
+    for (int i = numberOfNotes; i > 0; --i)
+        {
+            playPrettyNote(newOsc, newEnv, newDel);
+            std::cout << "Playing note " << i << std::endl;
+        }
 }
 
 int main()
@@ -637,12 +741,14 @@ int main()
     olYellowPages.contactInformationDiplay("HYLLLIC INC");
     olYellowPages.openToRandomPage();
     olYellowPages.disintigrate();
+    olYellowPages.tearOutPages();
 
     ElectricHeater heater;
 
     heater.produceHeat();
     heater.triggerCountdownTimer(0.5f);
     heater.displayCurrentTemperature();
+    heater.setPhonebookOnFire(olYellowPages);
 
     ElectricHeater::HeatingElement newCoil;
 
@@ -655,30 +761,35 @@ int main()
     oscOne.changePitch(777.f);
     oscOne.changePulseWidth(0.1f);
     oscOne.changeOctave(2);
+    oscOne.moveOctaves(2);
 
     EnvelopeGenerator ADSROne;
 
     ADSROne.playShortEnvelope(.22);
     ADSROne.playLongEnvelope(.57, 1.5);
     ADSROne.remainOpen();
+    ADSROne.cycleEnvelope(4);
 
     BandPassFilter newBPFilter;
 
     newBPFilter.changeBPCutoff(1250.7f);
     newBPFilter.changeBPResonance(0.25f);
     newBPFilter.changeFilterSlope("24 dB/Oct");
+    newBPFilter.filterSweep(true);
 
     SampleAndHold newSampAndHold;
 
     newSampAndHold.changeClockFrequency(3.5f);
     newSampAndHold.changeClockRandomness(0.75f);
     newSampAndHold.changeOutput(0.2f);
+    newSampAndHold.clockRunDown();
 
     Delay newDelay;
 
     newDelay.changeDelayRate("1/8");
     newDelay.changeFeedbackAmount(0.8f);
     newDelay.changeWetVolume(0.33);
+    newDelay.screamingFeedbackOutro();
 
     std::cout << "if my wet amount is " << newDelay.wetVolume << ", then my dry amount is " << newDelay.dryVolume << std::endl;
 
@@ -687,6 +798,7 @@ int main()
     korg.playPrettyNote(oscOne, ADSROne, newDelay);
     korg.playNoise(oscOne);
     korg.randomlyGenerateNotes(newSampAndHold);
+    korg.playNotes(3);
 
     std::cout << "Let me see what the octave is: " << korg.oscillator.octave << " and what the pitch is: " << korg.oscillator.pitch << ", and good lord that feedback is too high: " << korg.delay.feedbackAmount << std::endl;
     
