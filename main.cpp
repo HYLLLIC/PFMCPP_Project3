@@ -158,10 +158,10 @@ float CorporateOffice::Employee::negotiateRaise(float raiseAmount)
 {
     float newSalary(salary);
     while (newSalary < salary + raiseAmount)
-        {
-            newSalary+=(raiseAmount*.25f);
-            std::cout << name << " says, how about: " << newSalary << std::endl;
-        }
+    {
+        newSalary+=(raiseAmount*.25f);
+        std::cout << name << " says, how about: " << newSalary << std::endl;
+    }
     std::cout << "Fine! Get out of my office!" << std::endl;
     return newSalary;
 }
@@ -266,17 +266,17 @@ int PhoneBook::tearOutPages()
 {
     int pagesTorn = 0;
     while (pagesTorn < numberOfPages)
+    {
+        int pagesToTear = (numberOfPages - pagesTorn) / 2 + 25;
+        if (pagesTorn + pagesToTear > numberOfPages) 
         {
-            int pagesToTear = (numberOfPages - pagesTorn) / 2 + 25;
-            if (pagesTorn + pagesToTear > numberOfPages) 
-                {
-                    pagesTorn = numberOfPages; 
-                }
-                {
-                    pagesTorn += pagesToTear;
-                    std::cout << "Tearing out " << pagesToTear << " pages." << std::endl;
-                }
+            pagesTorn = numberOfPages; 
         }
+        {
+            pagesTorn += pagesToTear;
+            std::cout << "Tearing out " << pagesToTear << " pages." << std::endl;
+        }
+    }
     return numberOfPages;
 }
 
@@ -361,9 +361,9 @@ void ElectricHeater::setPhonebookOnFire(PhoneBook phoneBookToBurn)
 {
     phoneBookToBurn.numberOfPages = 8;
     for (; phoneBookToBurn.numberOfPages > 0; --phoneBookToBurn.numberOfPages)
-        {
-            std::cout << "Burning page " << phoneBookToBurn.numberOfPages << std::endl;
-        }
+    {
+        std::cout << "Burning page " << phoneBookToBurn.numberOfPages << std::endl;
+    }
 }
 
 struct Oscillator
@@ -413,10 +413,10 @@ int Oscillator::changeOctave(int newOctave)
 void Oscillator::moveOctaves(int numOctaves)
 {
     while (octave > 4)
-        {
-            octave = octave/numOctaves;
-            std::cout << "Now at " << octave << " octaves" << std::endl;
-        }
+    {
+        octave = octave/numOctaves;
+        std::cout << "Now at " << octave << " octaves" << std::endl;
+    }
 }
 
 struct EnvelopeGenerator
@@ -475,9 +475,9 @@ void EnvelopeGenerator::remainOpen()
 void EnvelopeGenerator::cycleEnvelope(int keyPressTime)
 {
     for (int i = 0; i < keyPressTime; ++i)
-        {
-            std::cout << "/`-_" << std::endl;
-        }
+    {
+        std::cout << "/`-_" << std::endl;
+    }
 }
 
 struct BandPassFilter
@@ -530,18 +530,18 @@ void BandPassFilter::filterSweep(bool upOrDown)
     if (upOrDown == true)
     {
         while (highPassCutoff < 20000)
-            {
-                changeBPCutoff(highPassCutoff + 800);
-                std::cout << "New filter cutoff is " << highPassCutoff << std::endl;
-            }
+        {
+            changeBPCutoff(highPassCutoff + 800);
+            std::cout << "New filter cutoff is " << highPassCutoff << std::endl;
+        }
     }
     else
     {
         while (lowPassCutoff > 20)
-            {
-                changeBPCutoff(lowPassCutoff - 800);
-                std::cout << "New filter cutoff is " << lowPassCutoff << std::endl;
-            }
+        {
+            changeBPCutoff(lowPassCutoff - 800);
+            std::cout << "New filter cutoff is " << lowPassCutoff << std::endl;
+        }
     }
 }
 
@@ -594,10 +594,10 @@ float SampleAndHold::changeOutput(float newOutput)
 void SampleAndHold::clockRunDown()
 {
     while (clockFrequency > 0.f)
-        {
-            clockFrequency -= 1.f;
-            std::cout << "Clock frequency is now " << clockFrequency << std::endl;
-        }
+    {
+        clockFrequency -= 1.f;
+        std::cout << "Clock frequency is now " << clockFrequency << std::endl;
+    }
 }
 
 struct Delay
@@ -644,12 +644,12 @@ double Delay::changeWetVolume(double newWetVolume)
 void Delay::screamingFeedbackOutro()
 {
     while (delayFidelity > 1)
-        {
-            delayFidelity -= 1;
-            changeWetVolume(wetVolume - 0.02);
-            changeFeedbackAmount(feedbackAmount + 0.02f);
-            std::cout << "Delay Fidelity: " << delayFidelity << " Volume: " << wetVolume << " FB Amount: " << feedbackAmount << std::endl;
-        }
+    {
+        delayFidelity -= 1;
+        changeWetVolume(wetVolume - 0.02);
+        changeFeedbackAmount(feedbackAmount + 0.02f);
+        std::cout << "Delay Fidelity: " << delayFidelity << " Volume: " << wetVolume << " FB Amount: " << feedbackAmount << std::endl;
+    }
 }
 
 struct ImaginaryKorg
@@ -699,10 +699,10 @@ void ImaginaryKorg::playNotes(int numberOfNotes)
     Delay newDel;
     
     for (int i = numberOfNotes; i > 0; --i)
-        {
-            playPrettyNote(newOsc, newEnv, newDel);
-            std::cout << "Playing note " << i << std::endl;
-        }
+    {
+        playPrettyNote(newOsc, newEnv, newDel);
+        std::cout << "Playing note " << i << std::endl;
+    }
 }
 
 int main()
